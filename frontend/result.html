@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analiz Sonucu - Healthify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .result-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .result-icon {
+      font-size: 40px;
+      color: #28a745;
+      margin-bottom: 15px;
+    }
+
+    .result-container h1 {
+      font-size: 26px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .result-container p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .result-image {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .diagnosis-box {
+      background-color: #f1fff5;
+      border-left: 6px solid #28a745;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      text-align: left;
+      border-radius: 8px;
+      color: #2e7d32;
+    }
+
+    .suggestion-box {
+      background-color: #fff8e1;
+      border-left: 6px solid #ffc107;
+      padding: 15px 20px;
+      text-align: left;
+      border-radius: 8px;
+      color: #8a6d00;
+    }
+
+    .btn-group {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn-group a {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-green {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background-color: #218838;
+    }
+
+    .btn-blue {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-blue:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="result-container">
+    <div class="result-icon">
+      <i class="fas fa-stethoscope"></i>
+    </div>
+    <h1 id="kategoriBaslik">Kategori: ...</h1>
+    <p>Analiz edilen görsel ve AI tarafından elde edilen sonuç:</p>
+
+    <img id="analizGorsel" src="#" alt="Analiz Görseli" class="result-image">
+
+    <div class="diagnosis-box" id="teshisKutusu">
+      <i class="fas fa-check-circle"></i> <strong>Teşhis:</strong> ...
+    </div>
+
+    <div class="suggestion-box" id="onerilerKutusu">
+      <i class="fas fa-lightbulb"></i> <strong>Öneri:</strong> ...
+    </div>
+
+    <div class="btn-group">
+      <a id="yenidenYukleBtn" href="#" class="btn-blue">
+        <i class="fas fa-arrow-left"></i> Yeni Görsel Yükle
+        </a>
+      <a href="index.html" class="btn-green"><i class="fas fa-home"></i> Ana Sayfa</a>
+    </div>
+  </div>
+
+  <script>
+    // Simülasyon: AI analiz sonucu (gerçekte backend'den gelecek)
+    const aiResults = {
+      eye: {
+        teshis: "Göz çevresinde kuruluk ve kızarıklık tespit edildi.",
+        oneriler: "Ekran süresini azaltın, yapay gözyaşı damlası kullanın. Devam ederse göz doktoruna başvurun."
+      },
+      skin: {
+        teshis: "Ciltte alerjik reaksiyon belirtisi görüldü.",
+        oneriler: "Alerjen kaynakları ortadan kaldırılmalı, dermatoloğa başvurulmalı."
+      },
+      nail: {
+        teshis: "Tırnak renginde bozulma ve çatlak tespit edildi.",
+        oneriler: "Vitamin eksikliği olabilir. Tırnak bakımına özen gösterin."
+      },
+      hair: {
+        teshis: "Yoğun dökülme ve seyrelme tespit edildi.",
+        oneriler: "Stres azaltıcı önlemler alınmalı, uzman görüşü alınmalı."
+      }
+    };
+
+    const kategoriMap = {
+      eye: "Göz",
+      skin: "Deri",
+      nail: "Tırnak",
+      hair: "Saç"
+    };
+
+    const selectedCategory = localStorage.getItem("selectedCategory") || "unknown";
+    const uploadedImage = localStorage.getItem("uploadedImage");
+
+    document.getElementById("kategoriBaslik").textContent = "Kategori: " + (kategoriMap[selectedCategory] || "Bilinmiyor");
+    if (uploadedImage) {
+      document.getElementById("analizGorsel").src = uploadedImage;
+    }
+
+    if (aiResults[selectedCategory]) {
+      document.getElementById("teshisKutusu").innerHTML = `<i class="fas fa-check-circle"></i> <strong>Teşhis:</strong> ${aiResults[selectedCategory].teshis}`;
+      document.getElementById("onerilerKutusu").innerHTML = `<i class="fas fa-lightbulb"></i> <strong>Öneri:</strong> ${aiResults[selectedCategory].oneriler}`;
+    } else {
+      document.getElementById("teshisKutusu").textContent = "Teşhis bulunamadı.";
+      document.getElementById("onerilerKutusu").textContent = "Öneri bulunamadı.";
+    }
+
+    // Yeni görsel yükle butonuna kategori ile yönlendirme
+        const yenidenYukleBtn = document.getElementById("yenidenYukleBtn");
+        if (selectedCategory !== "unknown") {
+        yenidenYukleBtn.href = `upload.html?category=${selectedCategory}`;
+        } else {
+        yenidenYukleBtn.href = "upload.html";
+        }
+  </script>
+
+</body>
+</html>
