@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kayıt Ol - Healthify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background-color: #fff;
+      padding: 40px 35px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    .register-container .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .register-container .logo i {
+      margin-right: 8px;
+    }
+
+    .register-container h2 {
+      font-size: 22px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 40px 12px 40px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .form-group i.fa-user,
+    .form-group i.fa-envelope,
+    .form-group i.fa-lock {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #007bff;
+      font-size: 16px;
+    }
+
+    .form-group i.toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      color: #888;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .register-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #218838;
+    }
+
+    .register-footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .register-footer a {
+      color: #007bff;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .register-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <div class="logo"><i class="fas fa-heartbeat"></i> Healthify</div>
+    <h2>Yeni Hesap Oluşturun</h2>
+
+    <form id="registerForm">
+      <div class="form-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="name" placeholder="Adınız Soyadınız" required />
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="E-posta adresiniz" required />
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="Şifreniz" required />
+        <i class="fas fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="confirmPassword" placeholder="Şifreyi tekrar girin" required />
+        <i class="fas fa-eye toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
+      </div>
+
+      <button type="submit" class="register-btn">
+        <i class="fas fa-user-plus"></i> Kayıt Ol
+      </button>
+    </form>
+
+    <div class="register-footer">
+      Zaten hesabınız var mı?
+      <a href="login.html">Giriş Yap</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      icon.classList.toggle("fa-eye");
+      icon.classList.toggle("fa-eye-slash");
+    }
+
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Şifreler eşleşmiyor!");
+        return;
+      }
+
+      // Geçici simülasyon: veritabanına kayıt kısmı burada olurdu
+      alert("Kayıt başarılı! Artık giriş yapabilirsiniz.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
