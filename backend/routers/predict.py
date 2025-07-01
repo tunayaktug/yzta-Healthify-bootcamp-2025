@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File
-from backend.models.predictor import predict_image
+from models.predictor import predict_image
 from fastapi import HTTPException
 
 router = APIRouter(
@@ -19,5 +19,3 @@ async def predict(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Invalid image format.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-

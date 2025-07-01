@@ -14,7 +14,6 @@
 
 </head>
 <body>
-
   <!-- Header -->
   <header class="main-header">
     <div class="logo">Healthify</div>
@@ -32,11 +31,12 @@
             <option value="hair">Saç</option>
           </select>
         </li>
-        <li><button id="loginBtn">Giriş Yap</button></li>
+                <li id="authArea">
+          <button id="loginBtn">Giriş Yap</button>
+        </li>
       </ul>
     </nav>
   </header>
-
   <!-- Hero Section -->
  <section class="hero">
   <div class="hero-image">
@@ -57,10 +57,10 @@
   </div>
 </section>
 
-
-  <script src="script.js"></script>
-</body>
-
+ <section id="news-section">
+    <h2>Sağlık Haberleri</h2>
+    <div id="news-container" class="news-grid"></div>
+  </section>
 
 <section class="how-it-works">
   <h2>Nasıl Kullanılır?</h2>
@@ -144,9 +144,9 @@
     </div>
     <div class="team-member">
       <img src="images/team5.jpg" alt="Team Member 5">
-      <h3>Zeynep Acar</h3>
-      <p>Proje Yöneticisi</p>
-      <a href="https://linkedin.com/in/zeynepacar" target="_blank">
+      <h3>Ata Güneş</h3>
+      <p>Product Owner - Developer</p>
+      <a href="https://www.linkedin.com/in/atag%C3%BCne%C5%9F/" target="_blank">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
     </div>
@@ -190,4 +190,33 @@
   </div>
 </footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const name = localStorage.getItem("user_name");
+    const authArea = document.getElementById("authArea");
+
+    if (name) {
+      authArea.innerHTML = `
+        <div class="dropdown">
+          <button class="dropdown-toggle">${name} <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-menu">
+            <a href="#" id="logoutBtn">Çıkış Yap</a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.clear();
+        window.location.href = "login.html";
+      });
+    } else {
+      // Giriş yapılmamışsa buton normal şekilde çalışsın
+      document.getElementById("loginBtn").addEventListener("click", () => {
+        window.location.href = "login.html";
+      });
+    }
+  });
+</script>
+ <script src="script.js"></script>
+</body>
 </html>

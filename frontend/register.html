@@ -153,30 +153,58 @@
   </div>
 
   <script>
-    function togglePassword(id, icon) {
-      const input = document.getElementById(id);
-      const isPassword = input.type === "password";
-      input.type = isPassword ? "text" : "password";
-      icon.classList.toggle("fa-eye");
-      icon.classList.toggle("fa-eye-slash");
+      function togglePassword(id, icon) {
+    const input = document.getElementById(id);
+    const isPassword = input.type === "password";
+
+    input.type = isPassword ? "text" : "password";
+
+    // Göz ikonunu değiştir
+    icon.classList.toggle("fa-eye");
+    icon.classList.toggle("fa-eye-slash");
+  }
+  document.getElementById("registerForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password !== confirmPassword) {
+    alert("Şifreler eşleşmiyor!");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        name: name
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Hatalı yanıtı düzgün göster
+      alert("Sunucu hatası: " + (data.detail || response.statusText));
+    } else {
+      alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+      window.location.href = "login.html";
     }
 
-    document.getElementById("registerForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
+  } catch (error) {
+    alert("İstek başarısız: " + error.message);
+  }
+});
 
-      if (password !== confirmPassword) {
-        alert("Şifreler eşleşmiyor!");
-        return;
-      }
+</script>
 
-      // Geçici simülasyon: veritabanına kayıt kısmı burada olurdu
-      alert("Kayıt başarılı! Artık giriş yapabilirsiniz.");
-      window.location.href = "login.html";
-    });
-  </script>
 </body>
 </html>
