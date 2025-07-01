@@ -1,0 +1,30 @@
+fastapi
+uvicorn
+
+# ai ve görsel işleme için
+torch
+torchvision
+pillow
+
+python-multipart   #dosya yükleme için
+
+numpy    #veri ve sayılar için
+
+# Kullanıcı Kimlik Doğrulama (JWT)
+python-jose[cryptography]
+passlib[bcrypt]
+
+
+pydantic[email]
+
+
+# Veritabanı ORM
+sqlalchemy
+databases
+pyodbc
+
+asyncpg      # PostgreSQL için
+
+python-dotenv   # Ortam Değişkeni Yönetimi
+
+loguru     # Hata Loglama (geliştirme kolaylığı için)

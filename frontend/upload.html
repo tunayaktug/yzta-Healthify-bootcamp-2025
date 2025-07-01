@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fotoğraf Yükle - Healthify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .upload-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .upload-container h1 {
+      font-size: 26px;
+      margin-bottom: 8px;
+      color: #007bff;
+    }
+
+    .upload-container p {
+      margin-bottom: 25px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .upload-icon {
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .upload-preview {
+      margin-bottom: 20px;
+    }
+
+    .upload-preview img {
+      max-width: 100%;
+      border-radius: 10px;
+      max-height: 280px;
+      object-fit: contain;
+      display: none;
+    }
+
+    .file-input {
+      padding: 14px;
+      border: 2px dashed #007bff;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .file-input:hover {
+      background-color: #eef6ff;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-label {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 15px;
+      color: #007bff;
+      font-weight: bold;
+      border: 2px dashed #007bff;
+      border-radius: 12px;
+      cursor: pointer;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .file-label:hover {
+      background-color: #e6f0ff;
+    }
+
+    .analyze-btn {
+      margin-top: 25px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .analyze-btn:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <div class="upload-container">
+    <div class="upload-icon">
+      <i class="fas fa-notes-medical"></i>
+    </div>
+    <h1 id="selectedCategory">Kategori: ...</h1>
+    <p>Lütfen bu bölgeye ait net bir fotoğraf yükleyin.</p>
+
+    <div class="upload-preview">
+      <img id="previewImage" src="#" alt="Yüklenen Görsel Önizleme">
+    </div>
+
+    <label for="imageUpload" class="file-label">
+      <i class="fas fa-cloud-upload-alt"></i> Fotoğraf Yükle
+    </label>
+    <input type="file" id="imageUpload" accept="image/*">
+
+    <button class="analyze-btn">
+      <i class="fas fa-microscope"></i> Analizi Başlat
+    </button>
+  </div>
+
+  <script>
+  const kategoriMap = {
+    eye: "Göz",
+    skin: "Deri",
+    nail: "Tırnak",
+    hair: "Saç"
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const categoryKey = params.get("category");
+  const categoryName = kategoriMap[categoryKey] || "Bilinmiyor";
+
+  document.getElementById("selectedCategory").textContent = "Kategori: " + categoryName;
+
+  const imageInput = document.getElementById('imageUpload');
+  const previewImage = document.getElementById('previewImage');
+
+  let base64Image = "";
+
+  imageInput.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        base64Image = e.target.result;
+        previewImage.src = base64Image;
+        previewImage.style.display = "block";
+
+        // Görseli ve kategoriyi localStorage'a kaydet
+        localStorage.setItem("uploadedImage", base64Image);
+        localStorage.setItem("selectedCategory", categoryKey);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  document.querySelector('.analyze-btn').addEventListener('click', () => {
+    if (base64Image) {
+      window.location.href = "result.html";
+    } else {
+      alert("Lütfen bir fotoğraf yükleyin.");
+    }
+  });
+</script>
+
+</body>
+</html>
