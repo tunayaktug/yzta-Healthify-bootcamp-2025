@@ -1,10 +1,12 @@
 import torch
 from torchvision import models, transforms
+from torchvision.models import ResNet50_Weights
 from PIL import Image
 import io
 
-
-model = models.resnet50(pretrained=True)  # Dummy model (ResNet50 pretrained) başka model gelirse burayı değiştirmeyi unutma
+# Yeni weights sistemini kullan
+weights = ResNet50_Weights.DEFAULT
+model = models.resnet50(weights=weights)
 model.eval()
 
 transform = transforms.Compose([

@@ -400,4 +400,121 @@ section {
   padding: 60px 40px 30px 40px;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* — Haber bölümüne genel ayarlar — */
+#news-section {
+  position: relative; /* ok butonlarını yerleştirmek için */
+}
+
+/* Kaydırma konteyneri: snap ve scrollbar gizleme */
+#news-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;  /* IE/Edge scrollbar gizle */
+  scrollbar-width: none;     /* Firefox scrollbar gizle */
+}
+#news-container::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+/* Kartlara snap */
+.news-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Önceki/Sonraki butonları */
+.news-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: background 0.2s;
+}
+.news-nav:hover {
+  background: rgba(255,255,255,1);
+}
+.news-nav.prev { left: 8px; }
+.news-nav.next { right: 8px; }
+
+/* Kart içeriği */
+.news-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.news-card-content {
+  padding: 12px;
+}
+.news-card-content h3 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.news-card-content p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+
+
 
