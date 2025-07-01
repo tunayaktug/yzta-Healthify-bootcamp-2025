@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthify - AI Sağlık Asistanı</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo">Healthify</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Ana Sayfa</a></li>
+        <li><a href="#about">Hakkımızda</a></li>
+        <li><a href="#contact">İletişim</a></li>
+        <li>
+          <select id="categoryDropdown">
+            <option>Kategori Seçin</option>
+            <option value="skin">Deri</option>
+            <option value="eye">Göz</option>
+            <option value="nail">Tırnak</option>
+            <option value="hair">Saç</option>
+          </select>
+        </li>
+        <li><button id="loginBtn">Giriş Yap</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+ <section class="hero">
+  <div class="hero-image">
+    <img src="images/Sprint1_5.jpeg" alt="AI sağlık analizi yapan doktor">
+  </div>
+
+  <div class="hero-text">
+    <h1>Yapay Zekanın Gücünü Kullanın</h1>
+    <p>Sağlığınızı anında analiz edin ve net, kişiselleştirilmiş sağlık içgörülerine ulaşın.</p>
+
+    <div class="benefits">
+      <p><i class="fa-regular fa-clock"></i> Her Zaman</p>
+      <p><i class="fa-solid fa-globe"></i> Her Yerden</p>
+      <p><i class="fa-solid fa-bolt"></i> Zahmetsizce</p>
+    </div>
+
+    <button class="cta-button">Analize Başla</button>
+  </div>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+
+
+<section class="how-it-works">
+  <h2>Nasıl Kullanılır?</h2>
+  <div class="steps">
+    <div class="step">
+      <i class="fa-regular fa-list-alt"></i>
+      <h3>Bir Kategori Seçin</h3>
+      <p>Analiz etmek istediğiniz sağlık kategorisini seçin (örneğin: cilt, tırnak, saç).</p>
+    </div>
+    <div class="step">
+      <i class="fa-regular fa-image"></i>
+      <h3>Bir Fotoğraf Yükleyin</h3>
+      <p>Seçilen bölgenin net bir fotoğrafını çekin ya da yükleyin.</p>
+    </div>
+    <div class="step">
+      <i class="fa-solid fa-robot"></i>
+      <h3>Yapay Zeka Analiz Etsin</h3>
+      <p>Gelişmiş yapay zeka modelimiz görüntüyü saniyeler içinde analiz eder.</p>
+    </div>
+    <div class="step">
+      <i class="fa-regular fa-circle-check"></i>
+      <h3>Sonuçları Görün ve Öneriler Alın</h3>
+      <p>Sonuçları anında görün ve kişiselleştirilmiş sağlık içgörülerine ulaşın.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+ <h2>Kullanıcı Yorumları</h2>
+  <div class="testimonial-box" id="testimonialBox">
+    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="user" class="user-photo">
+    <div class="testimonial-content">
+      <strong id="userName">Sarah W.</strong>
+      <p id="userComment">“An amazing tool for managing my health!”</p>
+    </div>
+  </div>
+
+  <div class="dots">
+    <span class="dot active" onclick="showTestimonial(0)"></span>
+    <span class="dot" onclick="showTestimonial(1)"></span>
+    <span class="dot" onclick="showTestimonial(2)"></span>
+    <span class="dot" onclick="showTestimonial(3)"></span>
+    <span class="dot" onclick="showTestimonial(4)"></span>
+  </div>
+</section>
+
+<section class="our-team" id="about">
+  <h2>Ekibimiz</h2>
+  <div class="team-container">
+    <div class="team-member">
+      <img src="images/team1.jpg" alt="Team Member 1">
+      <h3>Tunay Aktuğ</h3>
+      <p>Scrum Master - Developer</p>
+      <a href="https://www.linkedin.com/in/tunay-a-2b94b9250/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    <div class="team-member">
+      <img src="images/team2.jpg" alt="Team Member 2">
+      <h3>Neslihan Keskin</h3>
+      <p>Developer</p>
+      <a href="https://www.linkedin.com/in/neslihan-keskin/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    <div class="team-member">
+      <img src="images/team3.jpg" alt="Team Member 3">
+      <h3>Tuğçe Simge Arslan</h3>
+      <p>Developer</p>
+      <a href="https://www.linkedin.com/in/tu%C4%9F%C3%A7e-simge-arslan-b8741a232/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    <div class="team-member">
+      <img src="images/team4.jpg" alt="Team Member 4">
+      <h3>Büşra Yavuz</h3>
+      <p>Developer</p>
+      <a href="https://www.linkedin.com/in/0busrayavuz/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    <div class="team-member">
+      <img src="images/team5.jpg" alt="Team Member 5">
+      <h3>Zeynep Acar</h3>
+      <p>Proje Yöneticisi</p>
+      <a href="https://linkedin.com/in/zeynepacar" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>İletişime Geçin</h2>
+  <p>Bize mesaj göndermek isterseniz formu kullanabilir ya da direkt <a href="mailto:aktugtunay87@gmail.com">info@healthify.org</a> adresine e-posta atabilirsiniz.</p>
+
+  <form action="mailto:aktugtunay87@gmail.com" method="POST" enctype="text/plain">
+    <div class="form-group">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+    </div>
+
+    <div class="form-group">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+    </div>
+
+    <div class="form-group">
+      <i class="fa-solid fa-comment-dots"></i>
+      <textarea name="message" placeholder="Mesajınız..." rows="5" required></textarea>
+    </div>
+
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Gönder</button>
+  </form>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 Healthify Takımı</p>
+    <p>Bu proje eğitim amaçlı geliştirilmiştir.</p>
+    <div class="footer-links">
+      <a href="#">Ana Sayfa</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#contact">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+</html>
