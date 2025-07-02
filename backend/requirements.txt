@@ -28,3 +28,5 @@ asyncpg      # PostgreSQL için
 python-dotenv   # Ortam Değişkeni Yönetimi
 
 loguru     # Hata Loglama (geliştirme kolaylığı için)
+
+requests

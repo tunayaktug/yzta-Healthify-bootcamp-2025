@@ -1,3 +1,4 @@
+console.log("✅ script.js yüklendi!");
 document.getElementById('categoryDropdown').addEventListener('change', function() {
   const selected = this.value;
   if (selected !== "Kategori Seçin") {
@@ -42,40 +43,27 @@ function showTestimonial(index) {
   document.getElementById('userName').textContent = testimonial.name;
   document.getElementById('userComment').textContent = testimonial.comment;
 
-  // Dots
   document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
   document.querySelectorAll('.dot')[index].classList.add('active');
 }
 
-// Otomatik geçiş (opsiyonel)
 setInterval(() => {
   currentIndex = (currentIndex + 1) % testimonials.length;
   showTestimonial(currentIndex);
-}, 6000); // Her 6 saniyede değişir
+}, 6000);
 
 document.getElementById('loginBtn').addEventListener('click', function () {
   window.location.href = "login.html";
 });
-// İlk yükleme
+
 showTestimonial(0);
 
+// ✅ GÜNCEL HABERLERİ ÇEK
 document.addEventListener("DOMContentLoaded", () => {
   const newsSection   = document.getElementById('news-section');
   const newsContainer = document.getElementById('news-container');
 
-  // Türkçe sağlık haberleri için RSS beslemesi
-  const RSS_URL   = 'https://www.sabah.com.tr/rss/saglik.xml';
-  const PROXY_URL = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(RSS_URL);
-
-  // Karıştırma fonksiyonu
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-
-  // Önceki/Sonraki butonları
+  // Ok butonları oluştur
   const prevBtn = document.createElement('button');
   prevBtn.className = 'news-nav prev';
   prevBtn.textContent = '‹';
@@ -91,46 +79,46 @@ document.addEventListener("DOMContentLoaded", () => {
     newsContainer.scrollBy({ left:  newsContainer.clientWidth * 0.8, behavior: 'smooth' });
   });
 
-  // RSS’i çek, karıştır, ilk 10’u göster
-  fetch(PROXY_URL)
-    .then(res => {
-      if (!res.ok) throw new Error('Ağ hatası');
-      return res.text();
-    })
-    .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+  // API'den haberleri çek
+  fetch("http://localhost:8000/news")
+    .then(res => res.json())
     .then(data => {
-      const items = Array.from(data.querySelectorAll('item'));
-      shuffle(items);
-      items.slice(0, 10).forEach(item => {
-        const title = item.querySelector('title')?.textContent || '';
-        const link  = item.querySelector('link')?.textContent  || '#';
-        let   desc  = item.querySelector('description')?.textContent || '';
-        desc = desc.replace(/<[^>]+>/g, '').slice(0, 100) + '…';
+      const articles = data.results;
+      if (!Array.isArray(articles) || articles.length === 0) {
+        newsContainer.innerHTML = "<p>Haber bulunamadı.</p>";
+        return;
+      }
+      // Kartları oluştur
+      let count = 0;
+      for (let i = 0; i < articles.length && count < 10; i++) {
+        const article = articles[i];
+        const title = article.title || "Başlık yok";
+        const link = article.link || "#";
+        const desc = (article.description || "").replace(/<[^>]+>/g, '').slice(0, 100) + "…";
+        const img = article.image_url;
+        // Fotoğrafı olmayan, boş veya hatalı url'li haberleri atla
+        if (!img || img.trim() === '' || img.startsWith('<')) continue;
 
-        // Görsel URL’si
-        let imgUrl = 'https://via.placeholder.com/300x180?text=Resim+Yok';
-        const thumb = item.querySelector('media\\:thumbnail, thumbnail');
-        const enc   = item.querySelector('enclosure');
-        if (thumb?.getAttribute('url'))    imgUrl = thumb.getAttribute('url');
-        else if (enc?.getAttribute('url')) imgUrl = enc.getAttribute('url');
-
-        // Kart oluştur
-        const card = document.createElement('a');
-        card.href      = link;
-        card.target    = '_blank';
-        card.className = 'news-card';
+        const card = document.createElement("a");
+        card.href = link;
+        card.target = "_blank";
+        card.className = "news-card";
         card.innerHTML = `
-          <img src="${imgUrl}" alt="${title}">
+          <img src="${img}" alt="${title}">
           <div class="news-card-content">
             <h3>${title}</h3>
             <p>${desc}</p>
           </div>
         `;
+        // Görsel yüklenemezse kartı kaldır
+        const imgEl = card.querySelector('img');
+        imgEl.onerror = () => { card.remove(); };
         newsContainer.append(card);
-      });
+        count++;
+      }
     })
     .catch(err => {
-      console.error(err);
-      newsContainer.innerHTML = '<p>Haberler yüklenemedi.</p>';
+      console.error("❌ Hata:", err);
+      newsContainer.innerHTML = "<p>Haberler yüklenemedi.</p>";
     });
 });

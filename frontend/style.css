@@ -440,66 +440,32 @@ section {
   position: relative; /* ok butonlarını yerleştirmek için */
 }
 
-/* Kaydırma konteyneri: snap ve scrollbar gizleme */
-#news-container {
+/* Kart içeriği */
+.news-grid {
   display: flex;
   overflow-x: auto;
-  gap: 16px;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;  /* IE/Edge scrollbar gizle */
-  scrollbar-width: none;     /* Firefox scrollbar gizle */
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
 }
-#news-container::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
-}
-
-/* Kartlara snap */
 .news-card {
-  flex: 0 0 280px;
-  scroll-snap-align: start;
+  flex: 0 0 300px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  margin-bottom: 8px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 .news-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 16px #0002;
 }
-
-/* Önceki/Sonraki butonları */
-.news-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  background: rgba(255,255,255,0.8);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  z-index: 10;
-  transition: background 0.2s;
-}
-.news-nav:hover {
-  background: rgba(255,255,255,1);
-}
-.news-nav.prev { left: 8px; }
-.news-nav.next { right: 8px; }
-
-/* Kart içeriği */
 .news-card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  border-radius: 12px 12px 0 0;
 }
 .news-card-content {
   padding: 12px;
@@ -513,6 +479,27 @@ section {
   font-size: 0.85rem;
   line-height: 1.4;
   color: #555;
+}
+.news-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0002;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.news-nav.prev { left: 0; }
+.news-nav.next { right: 0; }
+.news-section-wrapper {
+  position: relative;
 }
 
 
