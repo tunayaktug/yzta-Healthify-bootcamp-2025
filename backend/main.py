@@ -3,7 +3,9 @@ from routers import auth, predict, news
 from database import Base, engine
 from models import user, predictor
 from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
 # CORS ayarları
 app.add_middleware(
     CORSMiddleware,
@@ -12,9 +14,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 app.include_router(auth.router)
 app.include_router(predict.router)
 app.include_router(news.router)
-
 
 Base.metadata.create_all(bind=engine)
