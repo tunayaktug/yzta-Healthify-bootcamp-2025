@@ -456,10 +456,12 @@ section {
   margin-bottom: 8px;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 .news-card:hover {
-  box-shadow: 0 4px 16px #0002;
+  box-shadow: 0 8px 24px #0003;
+  transform: translateY(-8px) scale(1.03);
+  z-index: 2;
 }
 .news-card img {
   width: 100%;
