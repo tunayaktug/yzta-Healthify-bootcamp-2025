@@ -2,6 +2,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
+  overflow-x: hidden;
+ 
 }
 
 
@@ -50,50 +52,80 @@ select {
   transition: background-color 0.3s ease;
 }
 
-/* Hero Section */
-.hero {
+/* Yeni full ekran hero bölümü */
+.hero-full {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("images/anasayfagiris.jpg") center center / cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 60px 40px;
-  gap: 40px;
-  background-color: #f9f9f9;
-  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+  overflow: hidden; /* taşmayı engeller */
 }
 
-.hero-image img {
-  width: 450px;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+/* Görselin üstündeki koyu katman (karanlıklaştırma) */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
 }
 
-.hero-text {
-  max-width: 500px;
+/* Metin içeriği */
+.hero-content {
+  max-width: 800px;
+  z-index: 2;
 }
 
-.hero-text h1 {
-  font-size: 32px;
-  margin-bottom: 15px;
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-.hero-text p {
-  font-size: 18px;
-  margin-bottom: 10px;
+.hero-content p {
+  font-size: 20px;
   line-height: 1.6;
+  margin-bottom: 30px;
 }
 
-/* CTA Button */
+/* CTA butonu */
 .cta-button {
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 16px;
   background-color: #28a745;
   color: white;
   border: none;
-  margin-top: 20px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.cta-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive: Mobil uyum */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
 
 /* Icon List */
 .benefits p {
@@ -502,6 +534,50 @@ section {
 .news-nav.next { right: 0; }
 .news-section-wrapper {
   position: relative;
+}
+
+.category-selection {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.category-selection h1 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.category-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.category-card h2 {
+  font-size: 20px;
+  padding: 16px;
 }
 
 
