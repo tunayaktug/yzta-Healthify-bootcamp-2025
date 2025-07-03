@@ -25,8 +25,12 @@ def load_cache():
         return None, 0
 
 def save_cache(news, timestamp):
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump({"news": news, "timestamp": timestamp}, f)
+    try:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump({"news": news, "timestamp": timestamp}, f)
+        print("Cache dosyası başarıyla kaydedildi:", CACHE_FILE)
+    except Exception as e:
+        print("Cache dosyası kaydedilemedi:", e)
 
 @router.get("")
 def get_health_news():

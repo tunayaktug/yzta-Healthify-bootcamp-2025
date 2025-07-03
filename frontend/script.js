@@ -1,10 +1,13 @@
 console.log("✅ script.js yüklendi!");
-document.getElementById('categoryDropdown').addEventListener('change', function() {
-  const selected = this.value;
-  if (selected !== "Kategori Seçin") {
-    window.location.href = `/upload.html?category=${selected}`;
-  }
-});
+const catDropdown = document.getElementById('categoryDropdown');
+if (catDropdown) {
+  catDropdown.addEventListener('change', function() {
+    const selected = this.value;
+    if (selected !== "Kategori Seçin") {
+      window.location.href = `/upload.html?category=${selected}`;
+    }
+  });
+}
 
 const testimonials = [
   {
