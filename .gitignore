@@ -9,6 +9,7 @@ build/
 # venv
 .venv/
 .env/
+.env
 
 # VSCode / PyCharm
 .vscode/
@@ -20,3 +21,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# News cache
+news_cache.json
