@@ -283,7 +283,7 @@ Aşağıda Sprint 1 sürecinde kullanılan proje yönetimi süreçlerine ait gö
 
 ---
 
-### Project Kapsamı
+### Proje Kapsamı
 
 **Healthify**, kullanıcıların kişisel sağlıklarını dijital ortamda takip edebilmelerine olanak tanıyan yapay zeka destekli bir web ve mobil uygulamadır. Uygulama, sağlık verilerinin görsel analizine dayalı geri bildirimler sunarak kullanıcıların iyileşme süreçlerini takip etmelerine, öneriler almalarına ve düzenli olarak sağlık kontrollerini yapmalarına yardımcı olur. Proje aşağıdaki modülleri kapsamaktadır:
 
@@ -297,7 +297,7 @@ Aşağıda Sprint 1 sürecinde kullanılan proje yönetimi süreçlerine ait gö
 
 ---
 
-### Project Hedefi
+### Proje Hedefi
 
 - Bireylerin kişisel sağlık takibini kolaylaştırmak ve dijitalleştirmek  
 - Yapay zeka teknolojisi ile görsel analiz ve sağlık verisi değerlendirmesi yapmak  
@@ -378,7 +378,7 @@ Toplam hedef **750 puan** olacak şekilde her sprint için **250 puanlık** gör
 
 ---
 
-### Sprint Gözden Geçirilmesi
+### Sprint Review
 
 - **Tuğçe Simge Arslan**, **Büşra Yavuz**, **Ata Güneş**: Veri tarafında çalıştı, model, dataset, notebook araştırmaları yaptı, modellere karar verildi.  
 - **Neslihan Keskin** Figma üzerinden ilk UI tasarımlarını oluşturdu.  
