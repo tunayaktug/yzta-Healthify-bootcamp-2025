@@ -402,7 +402,7 @@ Toplam hedef **750 puan** olacak şekilde her sprint için **250 puanlık** gör
 
 ---
 
-### Sprint Gözden Geçirme Katılımcıları
+### Sprint Review Katılımcıları
 
 **`Tunay Aktuğ, Neslihan Keskin, Ata Güneş, Büşra Yavuz, Tuğçe Simge Arslan`**
 
