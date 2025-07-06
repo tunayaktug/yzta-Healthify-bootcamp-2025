@@ -250,14 +250,13 @@
 
 ---
 
-### Proje Yönetimi
+### Sprint Board SS
 
 Aşağıda Sprint 1 sürecinde kullanılan proje yönetimi süreçlerine ait görseller yer almaktadır:
 
 ---
 
 <img src="frontend/images/Sprint1_1.png" width="700"/>
-<img src="frontend/images/Sprint1_2.png" width="700"/>
 <img src="frontend/images/Sprint1_3.png" width="700"/>
 <img src="frontend/images/Sprint1_4.png" width="700"/>
 <img src="frontend/images/Sprint1_5.png" width="700"/>
@@ -265,8 +264,6 @@ Aşağıda Sprint 1 sürecinde kullanılan proje yönetimi süreçlerine ait gö
 <img src="frontend/images/Sprint1_7.png" width="700"/>
 <img src="frontend/images/Sprint1_8.png" width="700"/>
 <img src="frontend/images/Sprint1_9.png" width="700"/>
-<img src="frontend/images/Sprint1_10.png" width="700"/>
-<img src="frontend/images/Sprint1_11.png" width="700"/>
 <img src="frontend/images/Sprint1_12.png" width="700"/>
 <img src="frontend/images/Sprint1_13.png" width="700"/>
 <img src="frontend/images/Sprint1_14.png" width="700"/>
@@ -275,6 +272,18 @@ Aşağıda Sprint 1 sürecinde kullanılan proje yönetimi süreçlerine ait gö
 <img src="frontend/images/Sprint1_17.png" width="700"/>
 
 ---
+### Daily Scrum
+
+<img src="frontend/images/Sprint1_2.png" width="700"/>
+<img src="frontend/images/Sprint1_10.png" width="700"/>
+<img src="frontend/images/Sprint1_11.png" width="700"/>
+<img src="frontend/images/Sprint1_18.png" width="700"/>
+<img src="frontend/images/Sprint1_19.png" width="700"/>
+<img src="frontend/images/Sprint1_20.png" width="700"/>
+<img src="frontend/images/Sprint1_21.png" width="700"/>
+
+---
+
 
 </details>
 
