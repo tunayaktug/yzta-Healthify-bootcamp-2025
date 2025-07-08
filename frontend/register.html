@@ -6,6 +6,8 @@
   <title>Kayıt Ol - Healthify</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -16,32 +18,51 @@
       height: 100vh;
     }
 
-    .register-container {
-      background-color: #fff;
-      padding: 40px 35px;
-      border-radius: 18px;
+    .login-wrapper {
+      display: flex;
+      max-width: 960px;
+      width: 95%;
+      background: #fff;
+      border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 100%;
-      max-width: 400px;
-      box-sizing: border-box;
+      overflow: hidden;
     }
 
-    .register-container .logo {
-      font-size: 32px;
+    .login-right {
+      flex: 1;
+      padding: 60px 50px;
+    }
+
+    .login-left {
+      flex: 1;
+      background-color: #f2f6fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .logo {
+      font-size: 28px;
       font-weight: bold;
       color: #007bff;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
 
-    .register-container .logo i {
+    .logo i {
       margin-right: 8px;
     }
 
-    .register-container h2 {
-      font-size: 22px;
-      color: #444;
-      margin-bottom: 25px;
+    h2 {
+      margin: 0 0 25px;
+      font-size: 24px;
+      color: #333;
     }
 
     .form-group {
@@ -51,160 +72,149 @@
 
     .form-group input {
       width: 100%;
-      padding: 12px 40px 12px 40px;
+      padding: 12px 45px 12px 42px;
       font-size: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      outline: none;
-      box-sizing: border-box;
     }
 
-    .form-group i.fa-user,
     .form-group i.fa-envelope,
-    .form-group i.fa-lock {
+    .form-group i.fa-lock,
+    .form-group i.fa-user {
       position: absolute;
       top: 50%;
-      left: 12px;
+      left: 14px;
       transform: translateY(-50%);
       color: #007bff;
-      font-size: 16px;
     }
 
-    .form-group i.toggle-password {
+    .toggle-password {
       position: absolute;
       top: 50%;
-      right: 12px;
+      right: 14px;
       transform: translateY(-50%);
-      color: #888;
+      color: #555;
       cursor: pointer;
-      font-size: 16px;
     }
 
     .register-btn {
+      width: 100%;
       background-color: #28a745;
       color: white;
-      border: none;
       padding: 12px;
-      width: 100%;
+      border: none;
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+    }
+
+    .register-btn i {
+      margin-right: 6px;
     }
 
     .register-btn:hover {
       background-color: #218838;
     }
 
-    .register-footer {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #666;
-    }
+    @media(max-width: 768px) {
+      .login-wrapper {
+        flex-direction: column;
+      }
 
-    .register-footer a {
-      color: #007bff;
-      text-decoration: none;
-      margin-left: 5px;
-    }
-
-    .register-footer a:hover {
-      text-decoration: underline;
+      .login-left {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="register-container">
-    <div class="logo"><i class="fas fa-heartbeat"></i> Healthify</div>
-    <h2>Yeni Hesap Oluşturun</h2>
+  <div class="login-wrapper">
+    <!-- Görsel artık solda -->
+    <div class="login-left">
+      <img src="images/login-man.jpg" alt="Görsel" />
+    </div>
 
-    <form id="registerForm">
-      <div class="form-group">
-        <i class="fas fa-user"></i>
-        <input type="text" id="name" placeholder="Adınız Soyadınız" required />
-      </div>
+    <!-- Form sağda -->
+    <div class="login-right">
+      <div class="logo"><i class="fas fa-heartbeat"></i> Healthify</div>
+      <h2>Yeni Hesap Oluşturun</h2>
 
-      <div class="form-group">
-        <i class="fas fa-envelope"></i>
-        <input type="email" id="email" placeholder="E-posta adresiniz" required />
-      </div>
-
-      <div class="form-group">
-        <i class="fas fa-lock"></i>
-        <input type="password" id="password" placeholder="Şifreniz" required />
-        <i class="fas fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
-      </div>
-
-      <div class="form-group">
-        <i class="fas fa-lock"></i>
-        <input type="password" id="confirmPassword" placeholder="Şifreyi tekrar girin" required />
-        <i class="fas fa-eye toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
-      </div>
-
-      <button type="submit" class="register-btn">
-        <i class="fas fa-user-plus"></i> Kayıt Ol
-      </button>
-    </form>
-
-    <div class="register-footer">
-      Zaten hesabınız var mı?
-      <a href="login.html">Giriş Yap</a>
+      <form id="registerForm">
+        <div class="form-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="name" placeholder="Adınız Soyadınız" required />
+        </div>
+        <div class="form-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" placeholder="E-posta adresiniz" required />
+        </div>
+        <div class="form-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Şifreniz" required />
+          <i class="fas fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="confirmPassword" placeholder="Şifreyi tekrar girin" required />
+          <i class="fas fa-eye toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
+        </div>
+        <div style="margin: 18px 0 0 0; display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="policyCheck" style="width:18px;height:18px;">
+          <label for="policyCheck" style="font-size: 14px; color: #444;">
+            <a href="privacy.html" target="_blank" style="color:#007bff;text-decoration:underline;">Gizlilik politikasını</a> ve
+            <a href="terms.html" target="_blank" style="color:#007bff;text-decoration:underline;">hizmet koşullarını</a> okudum, anladım ve onaylıyorum.
+          </label>
+        </div>
+        <button type="submit" class="register-btn" style="margin-top:18px;"><i class="fas fa-user-plus"></i> Kayıt Ol</button>
+      </form>
     </div>
   </div>
 
   <script>
-      function togglePassword(id, icon) {
-    const input = document.getElementById(id);
-    const isPassword = input.type === "password";
-
-    input.type = isPassword ? "text" : "password";
-
-    // Göz ikonunu değiştir
-    icon.classList.toggle("fa-eye");
-    icon.classList.toggle("fa-eye-slash");
-  }
-  document.getElementById("registerForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
-
-  if (password !== confirmPassword) {
-    alert("Şifreler eşleşmiyor!");
-    return;
-  }
-
-  try {
-    const response = await fetch("http://127.0.0.1:8000/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        name: name
-      })
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      // Hatalı yanıtı düzgün göster
-      alert("Sunucu hatası: " + (data.detail || response.statusText));
-    } else {
-      alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
-      window.location.href = "login.html";
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      icon.classList.toggle("fa-eye");
+      icon.classList.toggle("fa-eye-slash");
     }
 
-  } catch (error) {
-    alert("İstek başarısız: " + error.message);
-  }
-});
+    document.getElementById("registerForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
 
-</script>
+      if (password !== confirmPassword) {
+        alert("Şifreler eşleşmiyor!");
+        return;
+      }
 
+      if (!document.getElementById("policyCheck").checked) {
+        e.preventDefault();
+        alert("Kayıt olmak için gizlilik politikası ve hizmet koşullarını onaylamalısınız.");
+        return false;
+      }
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, name })
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          alert("Sunucu hatası: " + (data.detail || response.statusText));
+        } else {
+          alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+          window.location.href = "login.html";
+        }
+      } catch (error) {
+        alert("İstek başarısız: " + error.message);
+      }
+    });
+  </script>
 </body>
 </html>

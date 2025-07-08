@@ -19,11 +19,12 @@
     <div class="logo">Healthify</div>
     <nav>
       <ul class="nav-links">
-        <li><a href="#">Ana Sayfa</a></li>
-        <li><a href="#about">Hakkımızda</a></li>
-        <li><a href="#contact">İletişim</a></li>
-        <li><a href="kategori.html">Kategori Seç</a></li>
-                <li id="authArea">
+      
+        <li><a href="about.html">Hakkımızda</a></li>
+        <li><a href="contact.html">İletişim</a></li>
+        <li><a href="#" id="kategoriSecLink">Kategoriler</a></li>
+        <li><a href="#" id="drBilgeHeader">Dr. Bilge</a></li>
+        <li id="authArea">
           <button id="loginBtn">Giriş Yap</button>
         </li>
       </ul>
@@ -35,15 +36,39 @@
     <div class="hero-content">
       <h1>Sağlığınızın Geleceği Burada</h1>
       <p>Yapay zeka destekli analizlerle sağlığınızı izleyin, anlayın ve yönetin.</p>
-      <button class="cta-button" onclick="window.location.href='kategori.html'">Analize Başla</button>
+      <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
+        <button class="cta-button" id="startAnalysisBtn" style="background: #007bff;">Analize Başla</button>
+        <button class="cta-button" id="chatbotBtn" style="background: #007bff;">Dr. Bilge</button>
+      </div>
     </div>
   </div>
 </section>
 
- <section id="news-section" class="news-section-wrapper">
-    <h2>Sağlık Haberleri</h2>
-    <div id="news-container" class="news-grid"></div>
-  </section>
+<section id="news-section" class="news-section-wrapper">
+  <h2>Sağlık Haberleri</h2>
+  <div id="news-container" class="news-grid"></div>
+</section>
+
+<section class="why-healthify">
+  <h2>Neden Healthify?</h2>
+  <div class="why-cards">
+    <div class="why-card">
+      <span class="why-icon">✅</span>
+      <h3>Güvenli Veri Saklama</h3>
+      <p>Kişisel sağlık verileriniz şifreli ve güvenli bir şekilde saklanır.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🤖</span>
+      <h3>Yapay Zeka Destekli Öneriler</h3>
+      <p>Sağlığınız için en güncel ve akıllı öneriler, gelişmiş yapay zeka ile sağlanır.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">👨‍⚕️</span>
+      <h3>Doktor Onaylı Sohbet Botu</h3>
+      <p>Yapay zeka sohbet botumuz, doktor onaylı bilgilerle size rehberlik eder.</p>
+    </div>
+  </div>
+</section>
 
 <section class="how-it-works">
   <h2>Nasıl Kullanılır?</h2>
@@ -90,86 +115,22 @@
   </div>
 </section>
 
-<section class="our-team" id="about">
-  <h2>Ekibimiz</h2>
-  <div class="team-container">
-    <div class="team-member">
-      <img src="images/team1.jpg" alt="Team Member 1">
-      <h3>Tunay Aktuğ</h3>
-      <p>Scrum Master - Developer</p>
-      <a href="https://www.linkedin.com/in/tunay-a-2b94b9250/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-    <div class="team-member">
-      <img src="images/team2.jpg" alt="Team Member 2">
-      <h3>Neslihan Keskin</h3>
-      <p>Developer</p>
-      <a href="https://www.linkedin.com/in/neslihan-keskin/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-    <div class="team-member">
-      <img src="images/team3.jpg" alt="Team Member 3">
-      <h3>Tuğçe Simge Arslan</h3>
-      <p>Developer</p>
-      <a href="https://www.linkedin.com/in/tu%C4%9F%C3%A7e-simge-arslan-b8741a232/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-    <div class="team-member">
-      <img src="images/team4.jpg" alt="Team Member 4">
-      <h3>Büşra Yavuz</h3>
-      <p>Developer</p>
-      <a href="https://www.linkedin.com/in/0busrayavuz/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-    <div class="team-member">
-      <img src="images/team5.jpg" alt="Team Member 5">
-      <h3>Ata Güneş</h3>
-      <p>Product Owner - Developer</p>
-      <a href="https://www.linkedin.com/in/atag%C3%BCne%C5%9F/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <h2>İletişime Geçin</h2>
-  <p>Bize mesaj göndermek isterseniz formu kullanabilir ya da direkt <a href="mailto:aktugtunay87@gmail.com">info@healthify.org</a> adresine e-posta atabilirsiniz.</p>
-
-  <form action="mailto:aktugtunay87@gmail.com" method="POST" enctype="text/plain">
-    <div class="form-group">
-      <i class="fa-solid fa-user"></i>
-      <input type="text" name="name" placeholder="Adınız Soyadınız" required>
-    </div>
-
-    <div class="form-group">
-      <i class="fa-solid fa-envelope"></i>
-      <input type="email" name="email" placeholder="E-posta Adresiniz" required>
-    </div>
-
-    <div class="form-group">
-      <i class="fa-solid fa-comment-dots"></i>
-      <textarea name="message" placeholder="Mesajınız..." rows="5" required></textarea>
-    </div>
-
-    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Gönder</button>
-  </form>
-</section>
-
-
 <footer class="footer">
   <div class="footer-content">
-    <p>© 2025 Healthify Takımı</p>
-    <p>Bu proje eğitim amaçlı geliştirilmiştir.</p>
     <div class="footer-links">
-      <a href="#">Ana Sayfa</a>
-      <a href="#about">Hakkımızda</a>
-      <a href="#contact">İletişim</a>
+      
+      <a href="about.html">Hakkımızda</a>
+      <a href="contact.html">İletişim</a>
+      <a href="faq.html">SSS</a>
+      <a href="privacy.html">Gizlilik Politikası</a>
+      <a href="terms.html">Hizmet Koşulları</a>
     </div>
+    <div class="footer-social">
+      <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
+    </div>
+    <p>© 2025 Healthify Takımı | Bu proje eğitim amaçlı geliştirilmiştir.</p>
   </div>
 </footer>
 
@@ -178,11 +139,68 @@
     const name = localStorage.getItem("user_name");
     const authArea = document.getElementById("authArea");
 
+    // Analize Başla butonu kontrolü
+    const startBtn = document.getElementById("startAnalysisBtn");
+    if (startBtn) {
+      startBtn.addEventListener("click", (e) => {
+        if (!localStorage.getItem("user_name")) {
+          e.preventDefault();
+          window.location.href = 'login.html';
+          return;
+        }
+        window.location.href = 'kategori.html';
+      });
+    }
+
+    // Sohbetli Sağlık Asistanı butonu kontrolü
+    const chatbotBtn = document.getElementById("chatbotBtn");
+    if (chatbotBtn) {
+      chatbotBtn.addEventListener("click", (e) => {
+        if (!localStorage.getItem("user_name")) {
+          e.preventDefault();
+          window.location.href = 'login.html';
+          return;
+        }
+        window.location.href = 'chatbot.html';
+      });
+    }
+
+    // Navbar'daki Kategori Seç linki kontrolü
+    const kategoriSecLink = document.getElementById("kategoriSecLink");
+    if (kategoriSecLink) {
+      kategoriSecLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!localStorage.getItem("user_name")) {
+          window.location.href = 'login.html';
+          return;
+        }
+        window.location.href = 'kategori.html';
+      });
+    }
+
+    // Header'daki Dr. Bilge linki kontrolü
+    const drBilgeHeader = document.getElementById("drBilgeHeader");
+    if (drBilgeHeader) {
+      drBilgeHeader.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!localStorage.getItem("user_name")) {
+          window.location.href = 'login.html';
+          return;
+        }
+        window.location.href = 'chatbot.html';
+      });
+    }
+
     if (name) {
       authArea.innerHTML = `
         <div class="dropdown">
           <button class="dropdown-toggle">${name} <i class="fas fa-caret-down"></i></button>
           <div class="dropdown-menu">
+            <a href="#">Profilim</a>
+            <a href="#">Analizlerim</a>
+            <a href="#">Gelişim Grafikleri</a>
+            <a href="#">Hatırlatmalarım</a>
+            <a href="#">Yardım & Kılavuz</a>
             <a href="#" id="logoutBtn">Çıkış Yap</a>
           </div>
         </div>
@@ -190,7 +208,7 @@
 
       document.getElementById("logoutBtn").addEventListener("click", () => {
         localStorage.clear();
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       });
     } else {
       // Giriş yapılmamışsa buton normal şekilde çalışsın

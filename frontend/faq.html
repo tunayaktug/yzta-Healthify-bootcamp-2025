@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSS - Healthify</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">Healthify</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html">Hakkımızda</a></li>
+        <li><a href="contact.html">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="faq-hero">
+    <div class="faq-hero-left">
+      <div class="faq-hero-title">Sık Sorulan Sorular</div>
+      <div class="faq-hero-desc">
+        SSS bölümümüzde aradığınız cevabı bulamadınız <br> mı? Sorunuz burada yoksa <a href="contact.html"> iletişim formumuzu</a> <br> kullanabilirsiniz. Bizi tercih ettiğiniz için teşekkür<br> ederiz.
+      </div>
+    </div>
+    <div class="faq-hero-right">
+     <img src="images/faq.jpg" alt="SSS Görseli">
+    </div>
+  </div>
+  <section class="faq-section" style="max-width:1100px; margin: 0 auto 48px auto;">
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Healthify nedir?<span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          <p>Healthify, yapay zeka destekli analizlerle sağlık verilerinizi güvenli şekilde yönetmenizi ve kişiselleştirilmiş öneriler almanızı sağlayan bir platformdur.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Verilerim güvende mi?<span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          <p>Evet, tüm verileriniz şifreli olarak saklanır ve üçüncü şahıslarla paylaşılmaz.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Analizler nasıl yapılıyor?<span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          <p>Yapay zeka tabanlı modellerimiz, yüklediğiniz görselleri ve verileri analiz ederek size özel sağlık içgörüleri sunar.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Healthify tıbbi tavsiye verir mi?<span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          <p>Healthify, doktor onaylı bilgiler sunar ancak kesin tanı ve tedavi için bir sağlık profesyoneline danışmalısınız.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Hangi kategorilerde analiz yapabilirim?<span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          <p>Cilt, saç, tırnak gibi farklı sağlık kategorilerinde analiz yapabilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="about.html">Hakkımızda</a>
+        <a href="contact.html">İletişim</a>
+        <a href="privacy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Hizmet Koşulları</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
+      </div>
+      <p>© 2025 Healthify Takımı | Bu proje eğitim amaçlı geliştirilmiştir.</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const answer = this.parentElement.querySelector('.faq-answer');
+        const item = this.parentElement;
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+        if (!isOpen) {
+          answer.classList.add('open');
+          item.classList.add('open');
+          this.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html> 
