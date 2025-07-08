@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sağlık Asistanı Sohbet Botu - Healthify</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .chatbot-container {
+      max-width: 500px;
+      margin: 48px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(0,123,255,0.08);
+      padding: 32px 24px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      min-height: 600px;
+    }
+    .chatbot-title {
+      color: #007bff;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .chatbot-desc {
+      color: #444;
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 1.08rem;
+    }
+    .chat-window {
+      flex: 1;
+      background: #f8fafd;
+      border-radius: 10px;
+      padding: 18px 12px;
+      margin-bottom: 18px;
+      overflow-y: auto;
+      min-height: 250px;
+      max-height: 350px;
+      box-shadow: 0 2px 12px rgba(0,123,255,0.07);
+      font-size: 1rem;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chat-input-row {
+      display: flex;
+      gap: 10px;
+    }
+    .chat-input-row input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .chat-input-row button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0 18px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .chat-input-row button:hover {
+      background: #0056b3;
+    }
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: #e6f0ff;
+      color: #007bff;
+      border-radius: 12px 12px 2px 12px;
+      padding: 8px 14px;
+      max-width: 80%;
+    }
+    .chat-bubble.bot {
+      align-self: flex-start;
+      background: #f1f1f1;
+      color: #222;
+      border-radius: 12px 12px 12px 2px;
+      padding: 8px 14px;
+      max-width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+    <div class="chatbot-title">Sağlık Asistanı Sohbet Botu</div>
+    <div class="chatbot-desc">Doktor destekli yapay zeka ile sağlıkla ilgili sorularınızı yazın, anında tavsiye ve bilgi alın.</div>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-bubble bot">Merhaba! Size nasıl yardımcı olabilirim?</div>
+    </div>
+    <form class="chat-input-row" id="chatForm">
+      <input type="text" id="userInput" placeholder="Sorunuzu yazın..." autocomplete="off" required />
+      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+  <script>
+    const chatWindow = document.getElementById('chatWindow');
+    document.getElementById('chatForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('userInput');
+      const userText = input.value.trim();
+      if (!userText) return;
+      // Kullanıcı mesajı ekle
+      const userBubble = document.createElement('div');
+      userBubble.className = 'chat-bubble user';
+      userBubble.textContent = userText;
+      chatWindow.appendChild(userBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+      input.value = '';
+      // Bot cevabı (örnek)
+      setTimeout(() => {
+        const botBubble = document.createElement('div');
+        botBubble.className = 'chat-bubble bot';
+        botBubble.textContent = 'Bu bir örnek cevaptır. Gerçek bot entegrasyonu için backend bağlantısı gereklidir.';
+        chatWindow.appendChild(botBubble);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }, 900);
+    });
+  </script>
+</body>
+</html> 

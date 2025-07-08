@@ -330,26 +330,62 @@ select {
 
 .footer {
   background-color: #f1f1f1;
+  color: #555;
   padding: 30px 20px;
   text-align: center;
-  color: #555;
   font-size: 14px;
-  margin-top: 0;      /* Varsa sıfırla */
-  padding-top: 20px;  /* Yeterli boşluk için */
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
 }
 
 .footer-links {
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 
 .footer-links a {
-  margin: 0 10px;
-  color: #007bff;
+  color: #222;
   text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  opacity: 0.85;
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  color: #ffd700;
+  opacity: 1;
+}
+
+.footer-social {
+  margin-bottom: 18px;
+}
+
+.footer-social a {
+  color: #555;
+  font-size: 1.6rem;
+  margin: 0 10px;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.footer-social a:hover {
+  color: #007bff;
+  transform: scale(1.15);
+}
+
+.footer p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin: 0;
+  color: #555;
 }
 
 html {
@@ -438,33 +474,57 @@ section {
 }
 
 .dropdown-toggle {
-  background-color: #007bff;
-  color: white;
+  background: #007bff;
+  color: #fff;
   border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  min-width: 150px;
+  text-align: center;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+  background: #0056b3;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 120px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  z-index: 1;
-  right: 0;
+  left: 0;
+  top: 110%;
+  min-width: 170px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  z-index: 100;
+  padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
 }
 
 .dropdown-menu a {
   display: block;
-  padding: 10px;
-  color: #333;
+  padding: 12px 24px;
+  color: #222;
   text-decoration: none;
+  font-size: 1rem;
+  text-align: left;
+  transition: background 0.18s, color 0.18s;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+.dropdown-menu a:hover {
+  background: #f3f7ff;
+  color: #007bff;
 }
 
 /* — Haber bölümüne genel ayarlar — */
@@ -580,6 +640,196 @@ section {
   padding: 16px;
 }
 
+.why-healthify {
+  padding: 40px 0 30px 0;
+  background: #f8fafd;
+  text-align: center;
+}
 
+.why-healthify h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: 700;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.why-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(26,60,93,0.08);
+  padding: 32px 24px 24px 24px;
+  width: 300px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.why-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(26,60,93,0.15);
+}
+
+.why-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.why-card h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.why-card p {
+  color: #333;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.faq-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 48px auto 32px auto;
+  background: linear-gradient(90deg, #f3f7ff 50%, #0a0e1a 50%);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,123,255,0.08);
+  padding: 0;
+  overflow: hidden;
+}
+.faq-hero-left {
+  flex: 1 1 340px;
+  min-width: 300px;
+  padding: 48px 36px 48px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.faq-hero-title {
+  color: #007bff;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.faq-hero-desc {
+    color: #222;
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+}
+.faq-hero-desc a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.faq-hero-right {
+  flex: 1 1 320px;
+  min-width: 260px;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  height: 100%;
+  overflow: hidden;
+}
+.faq-hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.faq-section {
+  max-width: 1100px;
+  margin: 0 auto 48px auto;
+  padding: 0 0 24px 0;
+}
+.faq-list {
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,123,255,0.07);
+  overflow: hidden;
+  border: 1px solid #e3eaf3;
+}
+.faq-item {
+  border-bottom: 1px solid #e3eaf3;
+  background: #fff;
+  transition: background 0.2s;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  color: #222;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 22px 28px;
+  font-size: 1.13rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+.faq-question:hover, .faq-question.active {
+  background: #f3f7ff;
+  color: #007bff;
+}
+.faq-plus {
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: bold;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.faq-question.active .faq-plus {
+  transform: rotate(45deg);
+  color: #007bff;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.2s;
+  padding: 0 28px;
+}
+.faq-answer.open {
+  padding: 16px 28px 24px 28px;
+  max-height: 300px;
+}
+.faq-answer p {
+  color: #222;
+  margin: 0;
+  font-size: 1rem;
+}
+@media (max-width: 900px) {
+  .faq-hero {
+    flex-direction: column;
+    padding: 0;
+    background: #f3f7ff;
+  }
+  .faq-hero-left, .faq-hero-right {
+    padding: 32px 18px;
+    min-width: 0;
+  }
+  .faq-hero-right img {
+    max-width: 100%;
+  }
+}
 
 
