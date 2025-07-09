@@ -210,8 +210,8 @@
     `;
 
       document.getElementById("logoutBtn").addEventListener("click", () => {
-        localStorage.clear();
-        window.location.href = "index.html";
+      localStorage.removeItem("user_name"); // sadece oturum kapat
+      window.location.href = "index.html";
       });
     } else {
       // Giriş yapılmamışsa buton normal şekilde çalışsın
