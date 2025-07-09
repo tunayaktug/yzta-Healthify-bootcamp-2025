@@ -30,7 +30,3 @@ python-dotenv   # Ortam Değişkeni Yönetimi
 loguru     # Hata Loglama (geliştirme kolaylığı için)
 
 requests
-
-transformers bitsandbytes accelerate #chatbot için
-fastapi uvicorn google-generativeai #chatbot için
-

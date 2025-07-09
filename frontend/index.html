@@ -37,9 +37,8 @@
       <h1>Sağlığınızın Geleceği Burada</h1>
       <p>Yapay zeka destekli analizlerle sağlığınızı izleyin, anlayın ve yönetin.</p>
       <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
-        <button class="cta-button" id="startAnalysisBtn">Analize Başla</button>
-        <button class="cta-button" id="chatbotBtn">Dr. Bilge</button>
-
+        <button class="cta-button" id="startAnalysisBtn" style="background: #007bff;">Analize Başla</button>
+        <button class="cta-button" id="chatbotBtn" style="background: #007bff;">Dr. Bilge</button>
       </div>
     </div>
   </div>
@@ -193,21 +192,19 @@
     }
 
     if (name) {
-    authArea.innerHTML = `
-      <div class="dropdown">
-        <button class="dropdown-toggle" id="userBtn">
-          ${name} <i class="fas fa-caret-down"></i>
-        </button>
-        <div class="dropdown-menu" id="userMenu">
-          <a href="profile.html">Profilim</a>
-          <a href="#">Analizlerim</a>
-          <a href="#">Gelişim Grafikleri</a>
-          <a href="#">Hatırlatmalarım</a>
-          <a href="#">Yardım &amp; Kılavuz</a>
-          <a href="#" id="logoutBtn">Çıkış Yap</a>
+      authArea.innerHTML = `
+        <div class="dropdown">
+          <button class="dropdown-toggle">${name} <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-menu">
+            <a href="#">Profilim</a>
+            <a href="#">Analizlerim</a>
+            <a href="#">Gelişim Grafikleri</a>
+            <a href="#">Hatırlatmalarım</a>
+            <a href="#">Yardım & Kılavuz</a>
+            <a href="#" id="logoutBtn">Çıkış Yap</a>
+          </div>
         </div>
-      </div>
-    `;
+      `;
 
       document.getElementById("logoutBtn").addEventListener("click", () => {
         localStorage.clear();
