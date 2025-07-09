@@ -206,6 +206,10 @@
 
   <script>
     const chatWindow = document.getElementById('chatWindow');
+    const profilBilgileri = {
+      ilaclar: localStorage.getItem("ilaclar") || "",
+      ameliyatlar: localStorage.getItem("ameliyatlar") || ""
+    };
     const sendBtn    = document.getElementById('sendBtn');
 
     document.getElementById('chatForm').addEventListener('submit', async function(e) {
@@ -236,7 +240,11 @@
         const res = await fetch("/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: userText })
+          body: JSON.stringify({
+          message: userText,
+          ilaclar: profilBilgileri.ilaclar,
+          ameliyatlar: profilBilgileri.ameliyatlar
+        })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profilim - Healthify</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-container {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .profile-form input, 
+    .profile-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .profile-form textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .profile-form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .profile-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Profil Bilgilerim</h2>
+    <form class="profile-form" id="profileForm">
+      <label for="ad">Ad:</label>
+      <input type="text" id="ad" name="ad" required>
+
+      <label for="soyad">Soyad:</label>
+      <input type="text" id="soyad" name="soyad" required>
+
+      <label for="adres">Adres:</label>
+      <textarea id="adres" name="adres"></textarea>
+
+      <label for="telefon">Telefon Numarası:</label>
+      <input type="tel" id="telefon" name="telefon">
+
+      <label for="ilaclar">Kullandığınız İlaçlar:</label>
+      <textarea id="ilaclar" name="ilaclar"></textarea>
+
+      <label for="ameliyatlar">Geçirdiğiniz Ameliyatlar:</label>
+      <textarea id="ameliyatlar" name="ameliyatlar"></textarea>
+
+      <button type="submit">Bilgileri Güncelle</button>
+    </form>
+  </div>
+
+  <script>
+    // Sayfa yüklendiğinde verileri doldur
+    document.addEventListener("DOMContentLoaded", () => {
+      const formElements = ['ad', 'soyad', 'adres', 'telefon', 'ilaclar', 'ameliyatlar'];
+      formElements.forEach(id => {
+        const value = localStorage.getItem(id);
+        if (value) {
+          document.getElementById(id).value = value;
+        }
+      });
+    });
+
+    // Form gönderildiğinde verileri kaydet
+    document.getElementById("profileForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formElements = ['ad', 'soyad', 'adres', 'telefon', 'ilaclar', 'ameliyatlar'];
+      formElements.forEach(id => {
+        const value = document.getElementById(id).value;
+        localStorage.setItem(id, value);
+      });
+      alert("Profil bilgileri başarıyla güncellendi.");
+    });
+  </script>
+</body>
+</html>
