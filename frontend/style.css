@@ -103,16 +103,17 @@ select {
 .cta-button {
   padding: 14px 28px;
   font-size: 16px;
-  background-color: #28a745;
+  background-color: #007bff; /* mavi */
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  min-width: 170px; /* Sabit genişlik ekle */
 }
 
 .cta-button:hover {
-  background-color: #218838;
+  background-color: #0056b3; /* daha koyu mavi hover */
 }
 
 /* Responsive: Mobil uyum */
