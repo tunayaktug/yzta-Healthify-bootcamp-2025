@@ -14,9 +14,7 @@ numpy    #veri ve sayılar için
 python-jose[cryptography]
 passlib[bcrypt]
 
-
 pydantic[email]
-
 
 # Veritabanı ORM
 sqlalchemy
@@ -31,6 +29,8 @@ loguru     # Hata Loglama (geliştirme kolaylığı için)
 
 requests
 
-transformers bitsandbytes accelerate #chatbot için
-fastapi uvicorn google-generativeai #chatbot için
-
+# chatbot için
+transformers
+bitsandbytes
+accelerate
+google-generativeai 
