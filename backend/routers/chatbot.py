@@ -4,17 +4,17 @@ import os
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-# Yeni SDK’dan import
-from google import genai
-from google.genai import types
-
+# Google Generative AI import
+import google.generativeai as genai
 # ENV’den API anahtarınızı çekin
 API_KEY = os.getenv("GOOGLE_API_KEY")
 if not API_KEY:
     raise RuntimeError("GOOGLE_API_KEY bulunamadı!")
 
-# Client’ı örnekleyin (SDK, env’den okuduğu için parametre de atlamazsınız)
-client = genai.Client(api_key=API_KEY)
+# Yeni SDK ile yapılandırma
+import google.generativeai as genai
+genai.configure(api_key=API_KEY)
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 class ChatRequest(BaseModel):
     message: str
@@ -44,16 +44,10 @@ async def chat(request: ChatRequest):
             f"Soru: {request.message}"
         )
 
-
-        # Tek satırlık içerik üretimi
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
-        # Yanıtı dön
+        # Doğru SDK ile içerik üretimi
+        response = model.generate_content(prompt)
         return ChatResponse(reply=response.text.strip())
 
     except Exception as e:
-        # Hata detayını debug için konsola basabilirsiniz:
-        # import traceback; print(traceback.format_exc())
+        import traceback; print(traceback.format_exc())
         raise HTTPException(status_code=500, detail=f"API hatası: {e}")

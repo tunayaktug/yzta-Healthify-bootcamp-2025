@@ -11,7 +11,7 @@ from routers.chatbot import router as chatbot_router
 from fastapi.staticfiles import StaticFiles
 from models.user import User
 from pathlib import Path
-
+import google.generativeai as genai
 
 
 app = FastAPI(title="Healthify API")
