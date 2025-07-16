@@ -7,9 +7,11 @@ dist/
 build/
 
 # venv
+venv/
 .venv/
 .env/
 .env
+
 
 # VSCode / PyCharm
 .vscode/

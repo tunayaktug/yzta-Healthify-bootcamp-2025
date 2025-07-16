@@ -169,12 +169,13 @@
     }
   });
 
-  document.querySelector('.analyze-btn').addEventListener('click', () => {
-    if (base64Image) {
-      window.location.href = "result.html";
-    } else {
+  document.querySelector('.analyze-btn').addEventListener('click', async () => {
+    if (!base64Image) {
       alert("Lütfen bir fotoğraf yükleyin.");
+      return;
     }
+    // Tüm kategorilerde (tırnak dahil) sadece yönlendirme
+    window.location.href = "result.html";
   });
 </script>
 

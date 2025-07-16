@@ -5,7 +5,7 @@ load_dotenv()
 from fastapi import FastAPI
 from routers import auth, predict, news
 from database import Base, engine
-from models import user, predictor
+from models import user
 from fastapi.middleware.cors import CORSMiddleware
 from routers.chatbot import router as chatbot_router
 from fastapi.staticfiles import StaticFiles
