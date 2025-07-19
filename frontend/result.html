@@ -134,8 +134,24 @@
   </div>
 
   <script>
-    // Simülasyon: AI analiz sonucu (gerçekte backend'den gelecek)
-    const aiResults = {
+    // API'den gelen sonuçları al
+    const predictionResult = localStorage.getItem("predictionResult");
+    let aiResults = {};
+    
+    if (predictionResult) {
+      try {
+        const result = JSON.parse(predictionResult);
+        aiResults[result.category] = {
+          teshis: result.prediction,
+          oneriler: result.recommendations ? result.recommendations.join(". ") : "Doktor kontrolüne başvurun."
+        };
+      } catch (e) {
+        console.error('Sonuç parse hatası:', e);
+      }
+    }
+    
+    // Fallback: Simülasyon sonuçları
+    const fallbackResults = {
       eye: {
         teshis: "Göz çevresinde kuruluk ve kızarıklık tespit edildi.",
         oneriler: "Ekran süresini azaltın, yapay gözyaşı damlası kullanın. Devam ederse göz doktoruna başvurun."
@@ -151,14 +167,29 @@
       hair: {
         teshis: "Yoğun dökülme ve seyrelme tespit edildi.",
         oneriler: "Stres azaltıcı önlemler alınmalı, uzman görüşü alınmalı."
+      },
+      chest: {
+        teshis: "Göğüs X-ray analizi tamamlandı. Akciğer durumu değerlendirildi.",
+        oneriler: "Sonuçları doktorunuzla paylaşın. Düzenli kontroller yaptırın."
+      },
+      fracture: {
+        teshis: "Kemik kırığı analizi tamamlandı. Kırık tespit edildi.",
+        oneriler: "Acil servise başvurun. Hareket etmeyin ve soğuk kompres uygulayın."
       }
     };
+    
+    // API sonucu yoksa fallback kullan
+    if (Object.keys(aiResults).length === 0) {
+      aiResults = fallbackResults;
+    }
 
     const kategoriMap = {
       eye: "Göz",
       skin: "Deri",
       nail: "Tırnak",
-      hair: "Saç"
+      hair: "Saç",
+      chest: "Göğüs (X-ray)",
+      fracture: "Kırık (X-ray)"
     };
 
     const selectedCategory = localStorage.getItem("selectedCategory") || "unknown";

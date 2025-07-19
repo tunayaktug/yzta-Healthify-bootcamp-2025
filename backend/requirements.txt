@@ -34,3 +34,8 @@ transformers
 bitsandbytes
 accelerate
 google-generativeai 
+
+# ONNX model çalıştırma için
+onnxruntime
+
+tensorflow #model 
