@@ -556,7 +556,6 @@ Geliştirme sürecinde ekip içi iletişim WhatsApp üzerinden yürütülmüşt�
 <img src="frontend/images/Sprint2_21.png" width="700"/>
 <img src="frontend/images/Sprint2_22.png" width="700"/>
 <img src="frontend/images/Sprint2_23.png" width="700"/>
-<img src="frontend/images/Sprint2_24.png" width="700"/>
 <img src="frontend/images/Sprint2_25.png" width="700"/>
 
 ---
