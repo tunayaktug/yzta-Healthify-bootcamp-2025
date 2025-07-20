@@ -426,4 +426,258 @@ Toplam hedef **750 puan** olacak şekilde her sprint için **250 puanlık** gör
 
 </details>
 
+<details>
+<summary><strong>Sprint 2</strong></summary>
+
+---
+
+<details>
+<summary><strong>Uygulama Fotoğrafları</strong></summary>
+
+---
+
+### Göğüs (X-ray) Analizi Ekranı  
+<img src="frontend/images/Sprint2_3.png" width="700"/>
+
+> **Teşhis:** Emphysema  
+> **Öneri:** Doktorunuza danışın, sigara kullanıyorsanız bırakın.
+
+---
+
+### Kırık (X-ray) Analizi Ekranı  
+<img src="frontend/images/Sprint2_4.png" width="700"/>
+
+> **Teşhis:** Fracture analizi simülasyonu  
+> **Öneri:** Acil servise başvurun, hareket etmeyin.
+
+---
+
+### Profil Bilgilerim Sayfası  
+<img src="frontend/images/Sprint2_5.png" width="700"/>
+
+> Kullanıcılar; kişisel bilgilerini, kullandığı ilaçları ve geçirdiği operasyonları bu alandan yönetebilir.
+
+---
+
+### Dr. Bilge Chatbot (Sağlık Asistanı)  
+<img src="frontend/images/Sprint2_6.png" width="700"/>
+
+> Kullanıcının profil bilgilerine (ilaçlar, hastalık geçmişi vb.) göre kişiselleştirilmiş tavsiyeler veren doktor destekli yapay zeka sohbet botudur.
+
+---
+
+### Navigasyon - Profil ve Alt Menü  
+<img src="frontend/images/Sprint2_7.png" width="700"/>
+
+> Kullanıcı profilinden analiz geçmişine, grafiklere ve yardım alanına ulaşabileceği yönlendirme menüsü.
+
+---
+
+### Kategori Seçim Sayfası  
+<img src="frontend/images/Sprint2_8.png" width="700"/>
+
+> Kullanıcılar analiz için ilgilendikleri bölgeyi (göz, cilt, saç, kırık vb.) bu ekrandan seçebilir.
+
+---
+
+### Sık Sorulan Sorular - Kart 1  
+<img src="frontend/images/Sprint2_9.png" width="700"/>
+
+> Healthify hakkında en çok merak edilen soruların cevaplandığı SSS alanıdır.
+
+---
+
+### Sık Sorulan Sorular - Kart 2  
+<img src="frontend/images/Sprint2_10.png" width="700"/>
+
+> Ek bilgi alanları ve kullanıcı yönlendirmeleriyle detaylandırılmış yardım kartları.
+
+---
+
+### Gizlilik Politikası  
+<img src="frontend/images/Sprint2_11.png" width="700"/>
+
+> Kullanıcı verilerinin korunmasına dair şeffaf ve detaylı bilgilendirme.
+
+---
+
+### Hizmet Koşulları  
+<img src="frontend/images/Sprint2_12.png" width="700"/>
+
+> Platformun kullanım amacı, veri sorumlulukları ve etik kuralları açıkça belirtilmiştir.
+
+---
+
+### Güncellenmiş Kayıt Ol Sayfası  
+<img src="frontend/images/Sprint2_13.png" width="700"/>
+
+> Modern UI tasarımı ile yeniden düzenlenen kullanıcı kayıt ekranı.
+
+---
+
+### Neden Healthify?  
+<img src="frontend/images/Sprint2_14.png" width="700"/>
+
+> Kullanıcıyı bilgilendiren 3 temel özellik: Güvenli Veri, Yapay Zeka Destekli Öneriler, Doktor Onaylı Chatbot.
+
+---
+
+### Dr. Bilge Chatbot – Örnek 2  
+<img src="frontend/images/Sprint2_18.png" width="700"/>
+
+> Kullanıcının geçmiş sağlık durumu (örneğin: bel fıtığı, kullanılan ilaçlar) göz önünde bulundurularak özel cevaplar üretir.
+
+---
+
+</details>
+
+<details>
+<summary><strong>Proje Yönetimi</strong></summary>
+
+---
+
+### Sprint Board SS  
+Sprint 2 sürecinde kullanılan Trello sprint panosuna ait ekran görüntüleri aşağıda sıralanmıştır:
+
+<img src="frontend/images/Sprint2_1.png" width="700"/>
+<img src="frontend/images/Sprint2_2.png" width="700"/>
+<img src="frontend/images/Sprint2_15.png" width="700"/>
+<img src="frontend/images/Sprint2_16.png" width="700"/>
+<img src="frontend/images/Sprint2_17.png" width="700"/>
+<img src="frontend/images/Sprint2_26.png" width="700"/>
+<img src="frontend/images/Sprint2_27.png" width="700"/>
+
+---
+
+### Daily Scrum  
+Geliştirme sürecinde ekip içi iletişim WhatsApp üzerinden yürütülmüştür. Günlük olarak yapılan toplantılar, görev paylaşımı ve ilerleme takibi aşağıdaki örneklerde görülmektedir:
+
+<img src="frontend/images/Sprint2_20.png" width="700"/>
+<img src="frontend/images/Sprint2_21.png" width="700"/>
+<img src="frontend/images/Sprint2_22.png" width="700"/>
+<img src="frontend/images/Sprint2_23.png" width="700"/>
+<img src="frontend/images/Sprint2_24.png" width="700"/>
+<img src="frontend/images/Sprint2_25.png" width="700"/>
+
+---
+
+</details>
+
+<details>
+<summary><strong>Burndown Chart</strong></summary>
+
+---
+
+<img src="frontend/images/Sprint2_19.png" width="700"/>
+
+> Burndown chart, Sprint 2 süresince yapılan işlerin zamana bağlı olarak ne şekilde tamamlandığını göstermektedir.  
+> Siyah çizgi gerçek ilerlemeyi, mavi çizgi ise ideal ilerleme çizgisini ifade etmektedir.  
+> 250 puanlık toplam iş yükü sprint boyunca düzenli şekilde azaltılmış ve sprint sonunda tüm görevler başarıyla tamamlanmıştır.
+
+---
+
+</details>
+
+<details>
+<summary><strong>Backlog Hesabı (Trello)</strong></summary>
+
+---
+
+### Healthify Projesi Trello Backlog
+
+Aşağıdaki QR kodunu tarayarak Healthify projesine ait Trello backlog’una kolayca erişebilirsiniz.
+
+<img src="frontend/images/Sprint2_28.png" width="300"/>
+
+> QR kod Trello panosuna doğrudan yönlendirir. Takım üyeleri, görevleri ve sprintleri burada takip edebilir.
+
+---
+
+</details>
+
+<details>
+<summary><strong>Sprint 2 Notları</strong></summary>
+
+---
+
+### Sprint Notları
+
+- Modeller **Kaggle**, **Hugging Face** ve **GitHub** üzerinden araştırıldı.
+- Seçimlerde **yüksek doğruluk oranı**, **accuracy**, **F1 score** gibi metrikler dikkate alındı.
+- Bazı modellere **"sağlıklı" sınıfı** eklenerek yeniden eğitildi; bu modellerin uygunluk ve doğruluk durumları tekrar değerlendirildi.
+- Model entegrasyonlarında **ONNX (Open Neural Network Exchange)** formatı kullanıldı.
+- Toplamda **30'dan fazla model araştırması** yapılmış olup bu araştırmalar **Google E-Tablolar** üzerinden takip edildi.
+- Sprint 2 süresince **4 farklı Google Meet toplantısı** düzenlendi.
+- **Dr. Bilge Chatbot** için **Gemini 2.5 Flash** kullanıldı ve kullanıcı profil bilgileriyle senkron şekilde kişisel sağlık tavsiyeleri sunması sağlandı.
+
+---
+### Sprint İçinde Tamamlanması Beklenen Puan
+
+- **Toplamda:** 250 Puan  
+- **Tamamlanan:** 250 Puan  
+
+---
+
+### Puan Tamamlama Mantığı
+
+Toplam hedef **750 puan** olacak şekilde her sprint için **250 puanlık görevler** planlanmıştır:
+
+- **1. Sprint:** Tasarım, temel endpointler, temel kod yapıları (JWT, haber çekme, veritabanı seçimi ve entegrasyonu)  
+- **2. Sprint:** Chatbot entegrasyonu, modellerin API'ye bağlanması, grafikler, kullanıcı geçmişi ve profili  
+- **3. Sprint:** Kalan eksiklerin tamamlanması ve uygulamaya özgünlük katacak özel özelliklerin geliştirilmesi  
+
+---
+
+### Sprint Review
+
+- **Kayıt Ol Sayfası** güncellendi. Kullanıcılar artık kayıt olabilmek için **gizlilik politikası** ve **hizmet koşullarını kabul etmek zorunda**.
+- Sayfa ayrıca **resimli ekran** ile kullanıcı deneyimi açısından iyileştirildi.
+- **Profilim Sayfası** geliştirildi. Kullanıcılar profil bilgilerini sisteme girip güncelleyebiliyor.
+- **Dr. Bilge Chatbot** eklendi. 
+  - **Gemini 2.5 Flash** modeli entegre edilerek kullanıcının **ilaç geçmişi** ve **geçirdiği ameliyatlar** dikkate alınarak **kişisel sağlık tavsiyeleri** veriliyor.
+  - Dr. Bilge artık tam anlamıyla bir **kişisel sağlık asistanı** olarak görev yapıyor.
+- **"Neden Healthify?"** bölümü eklendi ve kullanıcıyı bilgilendirici, sade bir anlatımla düzenlendi.
+- **Sık Sorulan Sorular** bölümü oluşturuldu ve içerikler düzenlendi.
+- **Hizmet Koşulları** ve **Gizlilik Politikası** eklendi, düzenlemeleri yapıldı.
+- **Göğüs X-Ray Kategorisi** için model başarıyla entegre edildi.
+- **Kırık X-Ray Kategorisi** için de model araştırıldı, uygun görülen model sisteme dahil edildi.
+- **30’dan fazla model araştırılması** hedefi başarıyla gerçekleştirildi.
+- Proje yönetimi aracı olarak yine **Trello** kullanıldı.
+- Model seçim süreçlerinde **accuracy, F1 score ve doğruluk** gibi metrikler üzerinde takım içinde bazı fikir ayrılıkları yaşandı.
+  - Bu sorunlar yapılan toplantılarla çözülerek uygun modeller üzerinde uzlaşıldı.
+  - Bu durum, takım üyelerine **fikir ayrılıklarının doğal ve yapıcı şekilde çözülebileceğini** öğretti.
+
+**Görev Dağılımı:**
+
+- **Tuğçe Simge Arslan**, **Büşra Yavuz**, **Ata Güneş**:  
+  Model araştırmaları, veri seti analizi, uygun modellerin belirlenmesi.
+  
+- **Neslihan Keskin**, **Tunay Aktuğ**:  
+  Site arayüzü geliştirmeleri, frontend ve backend güncellemeleri, model entegrasyonları.
+
+---
+
+### Sprint Review Katılımcıları
+
+**`Tunay Aktuğ, Neslihan Keskin, Ata Güneş, Büşra Yavuz, Tuğçe Simge Arslan`**
+
+---
+
+### Sprint Retrospektifi
+
+- Sprint 3’te aynı tempoda devam edilerek daha **özgün ve kaliteli bir ürün** ortaya çıkarılması hedefleniyor.
+- **Profilim** kısmı **veri tabanına entegre edilecek**. Bunun için `profile.py` oluşturulacak ve kullanıcı verileri oradan yönetilecek.
+- Kullanıcının yaptığı analizlerin görüntüleneceği **"Analizlerim"** bölümü eklenecek.
+- **"Hatırlatmalarım"** bölümü oluşturulacak. Kullanıcının ilaç ve hastalık geçmişine göre **ilaç hatırlatmaları** yapılacak.
+- **Yardım / Kılavuz** sekmesi hazırlanarak, kullanıcıların uygulamayı nasıl kullanacaklarını kolayca anlayabilmeleri sağlanacak.
+- Yeni **model kategorileri** araştırılacak ve uygulamaya entegre edilecek. Bu sayede sistem daha fazla hastalık/alanı kapsayacak.
+- **Ses tabanlı teşhis modelleri** üzerine araştırmalar yapılacak. Örneğin **öksürük sesi üzerinden tanı** gibi yenilikçi modeller değerlendirilecek.
+  - Bu konu Sprint 3 içerisinde özel bir toplantıyla ele alınacak ve uygulanabilirliği değerlendirilecek.
+- **Kullanıcı yorum sistemi** eklenecek. Kullanıcılar uygulamaya dair yorum bırakabilecek ve bu yorumlar ayrı bir sekmede görüntülenecek.
+- **"Şifremi Unuttum"** gibi ekranlar için **yeni UI tasarımları** uygulanacak.
+
+---
+
+</details>
+
 
