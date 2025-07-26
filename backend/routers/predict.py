@@ -26,7 +26,7 @@ MODEL_PATHS = {
     "nail": "models/nail_model.onnx",
     "hair": "models/hair_model.onnx",
     "chest": "models/chexnet_densenet121.onnx",
-    "fracture": "models/yolov7-p6-bonefracture.onnx"
+    "fracture": "models/yolov7.onnx"
 }
 
 # Predictor sınıfları

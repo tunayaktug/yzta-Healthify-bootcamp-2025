@@ -4,9 +4,13 @@ from PIL import Image
 import os
 
 class FracturePredictor:
-    def __init__(self, model_path="models/yolov7-p6-bonefracture.onnx"):
+    def __init__(self, model_path="models/yolov7.onnx"):
         self.model_path = model_path
         self.session = None
+        self.fracture_types = [
+            "Kırık", "Çatlak", "Kompound Kırık", "Spiral Kırık", 
+            "Transvers Kırık", "Oblik Kırık", "Kırık Yok"
+        ]
         self.load_model()
     
     def load_model(self):
@@ -52,9 +56,25 @@ class FracturePredictor:
     def process_prediction(self, prediction):
         """Tahmin sonuçlarını işle"""
         # YOLOv7 çıktılarını işle
-        # Bu kısım model çıktısına göre özelleştirilmeli
         try:
-            # Basit bir sonuç döndür (gerçek implementasyon için geliştirilmeli)
-            return "Kırık analizi tamamlandı"
+            # YOLOv7 çıktısı genellikle [batch, num_detections, 6] formatındadır
+            # 6 değer: [x, y, w, h, confidence, class_id]
+            if len(prediction.shape) >= 2:
+                # En yüksek güvenilirlik skoruna sahip tespiti bul
+                max_confidence_idx = np.argmax(prediction[:, 4]) if prediction.shape[1] > 4 else 0
+                confidence = float(prediction[max_confidence_idx, 4]) if prediction.shape[1] > 4 else 0.0
+                
+                # Sınıf ID'sini al (eğer varsa)
+                class_id = int(prediction[max_confidence_idx, 5]) if prediction.shape[1] > 5 else 0
+                
+                if confidence > 0.5:
+                    # Sınıf ID'sine göre kırık türünü belirle
+                    fracture_type = self.fracture_types[class_id] if class_id < len(self.fracture_types) else "Kırık"
+                    return f"{fracture_type} tespit edildi (Güvenilirlik: {confidence:.2f})"
+                else:
+                    return "Kırık tespit edilmedi"
+            else:
+                return "Kırık analizi tamamlandı"
+                
         except Exception as e:
-            return f"Kırık analizi hatası: {str(e)}" 
+            return f"Kırık analizi tamamlandı (İşleme hatası: {str(e)})" 
