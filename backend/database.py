@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URL = (
-    "mssql+pyodbc://localhost/healtify_db?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes"
+    "mssql+pyodbc://localhost\SQLEXPRESS/healtify_db?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes"
 )
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
