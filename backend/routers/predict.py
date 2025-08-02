@@ -22,11 +22,11 @@ router = APIRouter(
 # Model yolları
 MODEL_PATHS = {
     "skin": "models/skin_disease_model.h5",
-    "eye": "models/eye_model.onnx",
+    "eye": "models/vgg16_1.h5",
     "nail": "models/nail_model.onnx",
-    "hair": "models/hair_model.onnx",
+    "hair": "models/VGG16-Final.h5",
     "chest": "models/chexnet_densenet121.onnx",
-    "fracture": "models/yolov7-p6-bonefracture.onnx"
+    "fracture": "models/yolov7.onnx"
 }
 
 # Predictor sınıfları
@@ -196,6 +196,126 @@ def get_recommendations(category: str, result: str):
                 "Cilt sağlığınız için şüpheli bir durumda dermatoloğa danışın.",
                 "Güneş koruyucu kullanmayı ihmal etmeyin."
             ]
+    if category == "eye":
+        r = result.lower().replace(" ", "")
+        if "normal" in r:
+            return [
+                "Düzenli göz kontrollerinizi ihmal etmeyin.",
+                "Göz hijyenine dikkat edin."
+            ]
+        elif "diabetes" in r:
+            return [
+                "Diyabet kontrolünü sağlayın.",
+                "Göz tansiyonu ölçümünü düzenli yaptırın.",
+                "Düzenli göz muayenesi olun."
+            ]
+        elif "glaucoma" in r:
+            return [
+                "Göz tansiyonunuzu düzenli ölçtürün.",
+                "İlaçlarınızı düzenli kullanın.",
+                "Doktorunuza danışın."
+            ]
+        elif "cataract" in r:
+            return [
+                "Düzenli göz muayenesi olun.",
+                "Cerrahi gerekip gerekmediğini öğrenin.",
+                "Gözlük kullanımı ile görüşünüzü destekleyin."
+            ]
+        elif "agerelatedmaculardegeneration" in r:
+            return [
+                "Vitamin ve mineral desteği alın.",
+                "Göz muayenesini aksatmayın.",
+                "Sigara kullanıyorsanız bırakın."
+            ]
+        elif "hypertension" in r:
+            return [
+                "Tansiyonunuzu düzenli kontrol edin.",
+                "Düzenli göz muayenesi olun."
+            ]
+        elif "pathologicalmyopia" in r:
+            return [
+                "Yüksek miyopide göz dibi muayenelerini aksatmayın.",
+                "Ani görme kaybında acilen başvurun."
+            ]
+        elif "other" in r:
+            return [
+                "Göz sağlığınız için uzman bir hekime başvurun.",
+                "Şikayetleriniz devam ederse muayene olun."
+            ]
+        else:
+            return [
+                "Göz sağlığınız için bir göz doktoruna başvurun.",
+                "Göz hijyenine dikkat edin."
+            ]
+
+    if category == "hair":
+        r = result.lower().replace(" ", "")
+        if "alopeciaareata" in r:
+            return [
+                "Bir dermatoloji uzmanına başvurun.",
+                "Stresten uzak durmaya çalışın.",
+                "Vitamin ve mineral eksikliklerinizi kontrol ettirin."
+            ]
+        elif "contactdermatitis" in r:
+            return [
+                "Tahriş edici maddelerden uzak durun.",
+                "Hafif şampuan ve saç ürünleri kullanın.",
+                "İlerlemesi durumunda dermatoloğa başvurun."
+            ]
+        elif "folliculitis" in r:
+            return [
+                "Saç derinizi temiz tutun.",
+                "Çok sıcak sudan kaçının.",
+                "Gerekiyorsa dermatolojik tedavi alın."
+            ]
+        elif "headlice" in r:
+            return [
+                "Saçlarınızı ve eşyalarınızı düzenli olarak kontrol edin.",
+                "Bit şampuanı kullanın.",
+                "Ailenizi de kontrol ettirin."
+            ]
+        elif "lichenplanus" in r:
+            return [
+                "Dermatoloğa danışmadan ilaç kullanmayın.",
+                "Saçlı deriyi tahriş etmeyin.",
+                "Stresten kaçının."
+            ]
+        elif "malepatternbaldness" in r:
+            return [
+                "Düzenli dermatoloji kontrollerine gidin.",
+                "Tedavi seçenekleri için doktora danışın.",
+                "Beslenmenize dikkat edin."
+            ]
+        elif "psoriasis" in r:
+            return [
+                "Cildinizi nemli tutun.",
+                "Tahriş edici saç ürünlerinden kaçının.",
+                "Düzenli olarak dermatoloğa görünün."
+            ]
+        elif "seborrheicdermatitis" in r:
+            return [
+                "Düzenli saç yıkama alışkanlığı edinin.",
+                "Medikal şampuanlar kullanın.",
+                "Şikayetleriniz artarsa doktora başvurun."
+            ]
+        elif "telogeneffluvium" in r:
+            return [
+                "Stresten uzak durmaya çalışın.",
+                "Saç bakımınızı ihmal etmeyin.",
+                "Kansızlık ve tiroid gibi hastalıklar için tahlil yaptırın."
+            ]
+        elif "tineacapitis" in r:
+            return [
+                "Başkasının tarağını veya havlusunu kullanmayın.",
+                "Tedavi için dermatoloğa başvurun.",
+                "Saç derisinde döküntü olursa doktora gidin."
+            ]
+        else:
+            return [
+                "Saç sağlığınız için bir dermatoloğa danışın.",
+                "Saç bakımına ve hijyenine dikkat edin."
+            ]
+
     recommendations = {
         "chest": [
             "Sonuçları doktorunuzla paylaşın",
@@ -207,20 +327,11 @@ def get_recommendations(category: str, result: str):
             "Hareket etmeyin",
             "Soğuk kompres uygulayın"
         ],
-        "eye": [
-            "Göz doktoruna başvurun",
-            "Ekran süresini sınırlayın",
-            "Düzenli göz kontrolü yapın"
-        ],
         "nail": [
             "Tırnak bakımına dikkat edin",
             "Doktor kontrolüne gidin",
             "Beslenmenizi gözden geçirin"
-        ],
-        "hair": [
-            "Saç bakımına dikkat edin",
-            "Dermatoloğa başvurun",
-            "Beslenmenizi gözden geçirin"
         ]
     }
     return recommendations.get(category, ["Doktor kontrolüne başvurun"])
+
