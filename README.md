@@ -886,7 +886,7 @@ Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve 
 
 </details>
 
-### Detaylar
+### Son Notlar
 ---
 ## Kullanılan Teknolojiler
 
