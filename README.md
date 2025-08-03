@@ -888,6 +888,9 @@ Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve 
 
 ### Son Notlar
 ---
+<img src="frontend/images/Sprint3_17.png" width="700"/>
+
+---
 ## Kullanılan Teknolojiler
 
 | Kategori               | Teknoloji / Araç             | Kullanım Amacı                                                                 |
@@ -929,5 +932,13 @@ Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve 
 |                        | GitHub                       | Versiyon kontrolü ve takım içi geliştirme                                      |
 |                        | Google Sheets                | Model araştırmaları ve puan tabloları                                          |
 |                        | QR Code                      | Backlog erişimini kolaylaştırmak için                                          |
+
+## Model Dosyaları (Google Drive)
+
+Proje içerisinde kullanılan tüm yapay zeka modellerine aşağıdaki Google Drive bağlantısı üzerinden erişebilirsiniz:
+
+[Model Klasörüne Git](https://drive.google.com/drive/folders/1X1neN-LX7mbScHnR2ucaAz1_GMz6lL5i)
+
+> Klasör içinde `skin_disease_model.h5`, `vgg16_1.h5`, `VGG16-Final.h5`, `chexnet_densenet121.onnx`, `yolov7.onnx` gibi modeller yer almaktadır.
 
 
