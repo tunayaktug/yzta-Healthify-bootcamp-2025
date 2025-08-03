@@ -2,7 +2,13 @@
 
   ### **`Healthify`**
 
+## Ürün Logosu
 
+<p align="left">
+  <img src="frontend/images/Sprint3_16.jpeg" width="250" alt="Healthify Logo"/>
+</p>
+
+---
 
 ## **Takım Üyeleri**
 
@@ -678,5 +684,250 @@ Toplam hedef **750 puan** olacak şekilde her sprint için **250 puanlık görev
 ---
 
 </details>
+</details>
+<details>
+<summary><strong>Sprint 3</strong></summary>
+
+---
+
+<details>
+<summary><strong>Uygulama Fotoğrafları</strong></summary>
+
+---
+
+### Cilt Analizi (Skin)
+
+<img src="frontend/images/Sprint3_6.jpeg" width="700"/>
+
+> **Teşhis:** Actinic Keratosis  
+> **Öneri:** Güneş ışığından kaçının, dermatolojik kontrol yaptırın.
+
+---
+
+### Göz Analizi (Eye)
+
+<img src="frontend/images/Sprint3_7.jpeg" width="700"/>
+
+> **Teşhis:** Diabetes  
+> **Öneri:** Göz tansiyonunuzu ölçtürün, düzenli muayene olun.
+
+---
+
+### Saç Analizi (Hair)
+
+<img src="frontend/images/Sprint3_8.jpeg" width="700"/>
+
+> **Teşhis:** Alopecia Areata  
+> **Öneri:** Dermatoloji uzmanına başvurun, stres faktörlerine dikkat edin.
+
+---
+
+### Göğüs Röntgeni Analizi (Chest)
+
+<img src="frontend/images/Sprint3_9.jpeg" width="700"/>
+
+> **Teşhis:** Edema  
+> **Öneri:** Doktor kontrolü, sigarayı bırakma, düzenli kontrol önerilir.
+
+---
+
+### Kırık Analizi (Fracture)
+
+<img src="frontend/images/Sprint3_10.jpeg" width="700"/>
+
+> **Teşhis:** Kırık tespit edildi (Güvenilirlik: 0.86)  
+> **Öneri:** Acil servise başvurun, hareket etmeyin, soğuk kompres uygulayın.
+
+---
+
+</details>
+
+<details>
+<summary><strong>Proje Yönetimi</strong></summary>
+
+---
+
+### Sprint Board SS
+
+Sprint 3 sürecinde kullanılan Trello sprint panosuna ait ekran görüntüleri aşağıda sıralanmıştır:
+
+---
+
+<img src="frontend/images/Sprint3_1.png" width="700"/>
+<img src="frontend/images/Sprint3_2.png" width="700"/>
+<img src="frontend/images/Sprint3_3.png" width="700"/>
+<img src="frontend/images/Sprint3_4.png" width="700"/>
+<img src="frontend/images/Sprint3_5.png" width="700"/>
+
+---
+
+### Daily Scrum
+
+Geliştirme sürecinde ekip içi iletişim WhatsApp üzerinden yürütülmüştür. Günlük olarak yapılan toplantılar, görev paylaşımı ve ilerleme takibi aşağıdaki örneklerde görülmektedir:
+
+---
+
+<img src="frontend/images/Sprint3_11.png" width="700"/>
+
+---
+
+<img src="frontend/images/Sprint3_12.png" width="700"/>
+
+---
+
+<img src="frontend/images/Sprint3_13.png" width="700"/>
+
+---
+
+</details>
+
+<details>
+<summary><strong>Burndown Chart</strong></summary>
+
+---
+
+### Sprint 3 Burndown Chart
+
+Sprint 3 sürecine ait burndown chart aşağıda yer almaktadır. Bu grafik sprint boyunca planlanan ve tamamlanan iş miktarını günlük olarak gösterir.
+
+<img src="frontend/images/Sprint3_14.png" width="700"/>
+
+---
+
+</details>
+<details>
+<summary><strong>Backlog Hesabı (Trello)</strong></summary>
+
+---
+
+### Backlog Hesabı
+
+Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve ilerlemeye aşağıdaki QR kod aracılığıyla erişebilirsiniz.
+
+#### Trello QR Kodu:
+
+<img src="frontend/images/Sprint3_15.png" width="200"/>
+
+---
+
+</details>
+<details>
+<summary><strong>Sprint 3 Notları</strong></summary>
+
+---
+
+### Sprint Notları
+
+- Sprint 3 süresince tamamlanmamış görevler detaylandırılarak puanlandırılmış ve net bir **To-Do listesi** üzerinden ilerlenmiştir.
+- Model entegrasyonlarının tümü **FastAPI** üzerinden yapılmış ve her model ayrı ayrı test edilerek uygunlukları değerlendirilmiştir.
+- Backend ile frontend arasında veri uyuşmazlıkları tespit edilip çözüme kavuşturulmuştur.
+- Google Drive, GitHub ve Hugging Face üzerinden model yükleme, test etme ve paylaşma süreçleri yürütülmüştür.
+- Model yüklemelerinde **100MB+ sınırlarına takılmamak için Git LFS** gibi yöntemler araştırılmıştır.
+- Geliştirme süreci boyunca iletişim **WhatsApp** üzerinden yürütülmüş, karşılaşılan problemler ve öneriler günlük olarak paylaşılmıştır.
+- WhatsApp üzerinden 4’ten fazla aktif günlük scrum toplantısı yapılmış ve kararlar doğrudan uygulanmıştır.
+- Her kategori için farklı modeller test edilerek doğruluk ve performans açısından en uygun olanlar belirlenmiştir.
+
+---
+
+### Sprint İçinde Tamamlanması Beklenen Puan
+- **Toplam Planlanan:** 250 Puan  
+- **Tamamlanan:** 250 Puan  
+
+---
+
+### Sprint Review
+
+- **Kayıt Ol** sayfasına kullanıcı sözleşmesi ve gizlilik politikası onay kutuları eklendi.
+- **Profilim** sayfası güncellenerek veri tabanı bağlantılı hale getirildi. Kullanıcılar artık bilgilerini güncelleyebiliyor.
+- Tüm sayfalarda **font, renk ve boşluklar (padding/margin)** tutarlı hale getirildi.
+- **Sayfalar arası yönlendirme (routing)** sorunları çözüldü.
+- Analiz sonuçlarının doğruluğu test edildi ve hatalı modeller sistemden çıkarıldı.
+- En uygun sonuç veren model versiyonları seçilip üretim ortamına alındı.
+- Her kategori için 1 adet nihai model FastAPI ile test edildi ve entegre edildi.
+- Frontend ve backend tarafında verilerin uyuşmaması gibi sistemsel problemler giderildi.
+- Kategorilere özel model entegrasyonları (Deri, Göz, Saç, Kırık, Akciğer)  
+- Kullanıcı deneyimini geliştirmeye yönelik UI düzenlemeleri  
+- API ve dosya yönetimi iyileştirmeleri (CORS, upload limitleri vb.)  
+- Birim testler, manuel testler ve hata düzeltmeleri  
+- Sayfa yönlendirmeleri ve hata bildirimleri  
+- Kullanıcı dostu geri bildirim sistemleri
+
+---
+
+### Görev Dağılımı
+
+**Model Araştırmaları ve Uygunluk Testleri:**
+- Ata Güneş, Tuğçe Simge Arslan, Büşra Yavuz
+
+**Site Tasarımı, Frontend & Backend Geliştirmeleri, Entegrasyon:**
+- Tunay Aktuğ, Neslihan Keskin
+
+---
+
+### Sprint Review Katılımcıları
+
+**`Tunay Aktuğ, Neslihan Keskin, Ata Güneş, Büşra Yavuz, Tuğçe Simge Arslan`**
+
+
+---
+
+### Sprint Retrospektifi
+
+- Sprint 3 ile birlikte projenin son yapısal eksikleri giderilmiş, uygulamaya özgün özellikler kazandırılmıştır.
+- Uygulama kullanımı kolaylaştırmak adına **Yardım / Kılavuz** sayfası hazırlanmıştır.
+- Üçüncü sprintten ile birlikte tüm sprintlerin genel değerlendirmeleri yapılmış, uygulamanın gelecek hedefleri doğrultusunda yeni planlamalar oluşturulmuştur.
+- Yarışmanın başında belirlenen ve önceki sprintlerde yer alan tüm fonksiyonlar uygulamaya başarıyla entegre edilmiştir.
+- Proje başarıyla tamamlanmıştır. 
+- Ekip olarak sprintin sonunu birlikte kutladık ve **demo günü sunumu** için hazırlıklara başladık.
+
+---
+
+</details>
+
+</details>
+
+### Son Notlar
+---
+## Kullanılan Teknolojiler
+
+| Kategori               | Teknoloji / Araç             | Kullanım Amacı                                                                 |
+|------------------------|------------------------------|--------------------------------------------------------------------------------|
+| **Backend**            | Python 3.10+                 | Projenin tüm backend yapısı                                                    |
+|                        | FastAPI                      | REST API geliştirme                                                            |
+|                        | Uvicorn                      | ASGI server (geliştirme ortamı)                                                |
+|                        | JWT                          | Token bazlı kimlik doğrulama                                                   |
+|                        | SQLite                       | Hafif, yerel veritabanı çözümü                                                 |
+|                        | SQLAlchemy                   | ORM kullanılarak veri işlemleri                                                |
+|                        | bcrypt                       | Şifreleme ve güvenli kullanıcı doğrulama                                       |
+|                        | Google OAuth 2.0             | Google ile oturum açma seçeneği                                                |
+|                        | Pillow (PIL)                 | Görsel işleme (resim okuma, dönüştürme)                                        |
+|                        | ONNX Runtime                 | Platformdan bağımsız model çalıştırma                                          |
+|                        | TensorFlow / Keras           | Derin öğrenme modeli eğitimi ve kullanımı                                      |
+|                        | OpenCV                       | Görüntü işleme bazı modellerde (örneğin kırık analizi)                         |
+|                        | Google Generative AI (Gemini 2.5 Flash) | Dr. Bilge adlı chatbot için doğal dil işleme modeli                 |
+|                        | Requests                     | Dış API’lerden (Google News) veri çekmek için                                  |
+|                        | Jinja2                       | Dinamik HTML render işlemleri için                                             |
+|                                                                                                                                        |
+| **Frontend**           | HTML5 / CSS3 / JavaScript    | Statik kullanıcı arayüzü                                                       |
+|                        | Font Awesome                 | Arayüz simgeleri                                                               |
+|                        | Responsive Tasarım           | Mobil uyumlu ekranlar ve görsel optimizasyon                                   |
+|                        | JavaScript Fetch API         | Backend ile veri alışverişi                                                    |
+|                        | LocalStorage                 | Kullanıcı oturumu ve geçici veri saklama                                       |
+|                                                                                                                                        |
+| **Model Dosyaları**    | skin_disease_model.h5        | Cilt analizi modeli                                                            |
+|                        | VGG16-Final.h5               | Saç analizi                                                                    |
+|                        | vgg16_1.h5                   | Göz analizi                                                                    |
+|                        | chexnet_densenet121.onnx     | Akciğer (X-ray) analizi                                                        |
+|                        | yolov7.onnx                  | Kırık (X-ray) tespiti                                                          |
+|                                                                                                                                        |
+| **Modül Yapısı**       | `predictor.py` dosyaları     | Her analiz kategorisi için ayrı model çağırma dosyaları (skin, hair, vb.)      |
+|                        | `routers/` klasörü           | API uçlarının ayrı modüllerde düzenlenmesi                                     |
+|                        | `utils/` klasörü             | JWT ve hash işlemleri (jwt_handler.py, hash_handler.py)                        |
+|                                                                                                                                        |
+| **Proje Yönetimi**     | Trello                       | Sprint ve backlog takibi                                                       |
+|                        | WhatsApp / Google Meet       | Daily scrum toplantıları                                                       |
+|                        | GitHub                       | Versiyon kontrolü ve takım içi geliştirme                                      |
+|                        | Google Sheets                | Model araştırmaları ve puan tabloları                                          |
+|                        | QR Code                      | Backlog erişimini kolaylaştırmak için                                          |
 
 
