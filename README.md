@@ -5,7 +5,7 @@
 ## Ürün Logosu
 
 <p align="left">
-  <img src="frontend/images/Sprint3_16.jpeg" width="250" alt="Healthify Logo"/>
+  <img src="frontend/images/Sprint3_20.jpeg" width="250" alt="Healthify Logo"/>
 </p>
 
 ---
@@ -835,6 +835,16 @@ Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve 
 
 ---
 
+### Puan Tamamlama Mantığı
+
+Toplam hedef **750 puan** olacak şekilde her sprint için **250 puanlık görevler** planlanmıştır:
+
+- **1. Sprint:** Tasarım, temel endpointler, temel kod yapıları (JWT, haber çekme, veritabanı seçimi ve entegrasyonu)  
+- **2. Sprint:** Chatbot entegrasyonu, modellerin API'ye bağlanması, grafikler, kullanıcı geçmişi ve profili  
+- **3. Sprint:** Kalan eksiklerin tamamlanması ve uygulamaya özgünlük katacak özel özelliklerin geliştirilmesi  
+
+---
+
 ### Sprint Review
 
 - **Kayıt Ol** sayfasına kullanıcı sözleşmesi ve gizlilik politikası onay kutuları eklendi.
@@ -891,6 +901,12 @@ Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve 
 <img src="frontend/images/Sprint3_17.png" width="400"/>
 
 ---
+
+### Teaser
+[![Healthify Teaser](frontend/images/Sprint3_19.jpeg)](https://www.youtube.com/watch?v=OQIa4nV4mqI&ab_channel=NeslihanKeskin)
+
+---
+
 ## Kullanılan Teknolojiler
 
 | Kategori               | Teknoloji / Araç             | Kullanım Amacı                                                                 |
