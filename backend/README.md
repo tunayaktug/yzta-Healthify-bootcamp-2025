@@ -39,3 +39,5 @@ backend/
 └── README.md
 
 Not: Veritabanı bağlantısı MSSQL kullanılarak ODBC Driver 17 ile yapılmıştır.
+
+Eksik model dosyaları : https://drive.google.com/drive/folders/1X1neN-LX7mbScHnR2ucaAz1_GMz6lL5i?usp=sharing
