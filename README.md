@@ -934,9 +934,11 @@ Sprint 3 süresince kullanılan Trello panosuna ait backlog hesaplamalarına ve 
 |                        | QR Code                      | Backlog erişimini kolaylaştırmak için                                          |
 ## Modeller
 
-[![Modeller](frontend/images/Sprint3_18.jpg)](https://drive.google.com/drive/folders/1X1neN-LX7mbScHnR2ucaAz1_GMz6lL5i)
+<a href="https://drive.google.com/drive/folders/1X1neN-LX7mbScHnR2ucaAz1_GMz6lL5i" target="_blank">
+  <img src="frontend/images/Sprint3_18.jpg" alt="Modeller" width="400"/>
+</a>
 
-> 🔗 Yukarıdaki görsele tıklayarak proje kapsamında kullanılan yapay zeka modellerine ulaşabilirsiniz.
+> Yukarıdaki görsele tıklayarak proje kapsamında kullanılan yapay zeka modellerine ulaşabilirsiniz.
 
 
 
